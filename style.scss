@@ -1,0 +1,135 @@
+$step: 5%;
+
+@mixin offset($r, $c, $m) {
+    top: $step * ($r * $m - 2);
+    left: $step * ($c * $m - 2);
+}
+
+@mixin oGroup($r, $c) {
+    &.back{@include offset($r, $c, .1);}
+    &.sea{@include offset($r, $c, .25);}
+    &.front{@include offset($r, $c, 0.5);}
+} 
+
+@mixin column($r) {
+    &.c0:hover ~ .layer {@include oGroup($r, -2);}
+    &.c1:hover ~ .layer {@include oGroup($r, -1);}
+    &.c2:hover ~ .layer {@include oGroup($r, 0);}
+    &.c3:hover ~ .layer {@include oGroup($r, 1);}
+    &.c4:hover ~ .layer {@include oGroup($r, 2);}
+}
+
+html,body {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+
+    .layer {
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        top: -10%;
+        left: -10%;
+        transition: all .5s ease;
+    }
+
+    .m {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20%;
+        height: 20%;
+        display: block;
+        z-index: 99;
+
+        &.r1 {top: 20%;}
+        &.r2 {top: 40%;}
+        &.r3 {top: 60%;}
+        &.r4 {top: 80%;}
+        &.c1 {left: 20%;}
+        &.c2 {left: 40%;}
+        &.c3 {left: 60%;}
+        &.c4 {left: 80%;}
+
+        &.r0 {@include column(-2);}
+        &.r1 {@include column(-1);}
+        &.r2 {@include column(0);}
+        &.r3 {@include column(1);}
+        &.r4 {@include column(2);}
+    }
+
+    .back {
+        background-image: url("https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+
+    .front {
+        transform: rotate(-45deg);
+
+        .rocket {
+            background-image: url("rocket.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            position: absolute;
+
+            bottom: 50%;
+            width: 30%;
+            height: 30%;
+            left: 35%;
+        }
+
+        .thrust {
+            $particleSize: 5vmin;
+
+            display: block;
+            position: absolute;
+
+            top: 0;
+            width: 30%;
+            height: 100%;
+            left: calc(50% - #{$particleSize/2});
+
+            .heat {
+                height: 100%;
+                display: block;
+                position: absolute;
+
+                 .particle {
+                    display: block;
+                    top: 50%;
+                    position: absolute;
+                    border-radius: 50%;
+                    width: $particleSize;
+                    height: $particleSize;
+                    animation-name: travelFade;
+                    animation-duration: .4s;
+                    animation-iteration-count: infinite;
+                }
+
+                @for $i from 1 through 39 {
+                    &.h#{$i} {
+                        transform: rotate(#{random(20) - 10}deg);
+                        .particle {
+                            animation-delay: #{-.19s * $i};
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@keyframes travelFade {
+    0%   {background-color: rgba(255,70,0,0.8)}
+    100% {background-color: rgba(255,255,255,0.3); transform: translateY(55vh) scale(1.75);}
+  }

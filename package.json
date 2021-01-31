@@ -1,0 +1,12 @@
+{
+    "name": "thrust",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "scss": "node-sass --watch style.scss -o ."
+    },
+    "author": "robinrenker",
+    "dependencies": {
+        "node-sass": "^5.0.0"
+    }
+}
