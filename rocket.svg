@@ -6,7 +6,6 @@
         <pattern id="strips" x="0" y="0" width="5" height="20" patternUnits="userSpaceOnUse">
             <rect x="2" width="1" height="20"/>
         </pattern>
-  
     </defs>
     
     <path d="M49.5,1060 h101 v-623 l-17.5,-66 v-122 l-14,-93 v-45 l-19,-28 l-19,28 v45 l-14,93 v122 l-17.5,66 v549 Z" fill="#fff" stroke="#000" stroke-width="2"/>

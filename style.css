@@ -1,0 +1,466 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden; }
+  html .layer, body .layer {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    transition: top 1s ease, left 1s ease; }
+  html .m, body .m {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 20%;
+    display: block;
+    z-index: 99; }
+    html .m.r1, body .m.r1 {
+      top: 20%; }
+    html .m.r2, body .m.r2 {
+      top: 40%; }
+    html .m.r3, body .m.r3 {
+      top: 60%; }
+    html .m.r4, body .m.r4 {
+      top: 80%; }
+    html .m.c1, body .m.c1 {
+      left: 20%; }
+    html .m.c2, body .m.c2 {
+      left: 40%; }
+    html .m.c3, body .m.c3 {
+      left: 60%; }
+    html .m.c4, body .m.c4 {
+      left: 80%; }
+    html .m.r0.c0:hover ~ .layer.back, body .m.r0.c0:hover ~ .layer.back {
+      top: -11%;
+      left: -11%; }
+    html .m.r0.c0:hover ~ .layer.sea, body .m.r0.c0:hover ~ .layer.sea {
+      top: -12.5%;
+      left: -12.5%; }
+    html .m.r0.c0:hover ~ .layer.front, body .m.r0.c0:hover ~ .layer.front {
+      top: -15%;
+      left: -15%; }
+    html .m.r0.c1:hover ~ .layer.back, body .m.r0.c1:hover ~ .layer.back {
+      top: -11%;
+      left: -10.5%; }
+    html .m.r0.c1:hover ~ .layer.sea, body .m.r0.c1:hover ~ .layer.sea {
+      top: -12.5%;
+      left: -11.25%; }
+    html .m.r0.c1:hover ~ .layer.front, body .m.r0.c1:hover ~ .layer.front {
+      top: -15%;
+      left: -12.5%; }
+    html .m.r0.c2:hover ~ .layer.back, body .m.r0.c2:hover ~ .layer.back {
+      top: -11%;
+      left: -10%; }
+    html .m.r0.c2:hover ~ .layer.sea, body .m.r0.c2:hover ~ .layer.sea {
+      top: -12.5%;
+      left: -10%; }
+    html .m.r0.c2:hover ~ .layer.front, body .m.r0.c2:hover ~ .layer.front {
+      top: -15%;
+      left: -10%; }
+    html .m.r0.c3:hover ~ .layer.back, body .m.r0.c3:hover ~ .layer.back {
+      top: -11%;
+      left: -9.5%; }
+    html .m.r0.c3:hover ~ .layer.sea, body .m.r0.c3:hover ~ .layer.sea {
+      top: -12.5%;
+      left: -8.75%; }
+    html .m.r0.c3:hover ~ .layer.front, body .m.r0.c3:hover ~ .layer.front {
+      top: -15%;
+      left: -7.5%; }
+    html .m.r0.c4:hover ~ .layer.back, body .m.r0.c4:hover ~ .layer.back {
+      top: -11%;
+      left: -9%; }
+    html .m.r0.c4:hover ~ .layer.sea, body .m.r0.c4:hover ~ .layer.sea {
+      top: -12.5%;
+      left: -7.5%; }
+    html .m.r0.c4:hover ~ .layer.front, body .m.r0.c4:hover ~ .layer.front {
+      top: -15%;
+      left: -5%; }
+    html .m.r1.c0:hover ~ .layer.back, body .m.r1.c0:hover ~ .layer.back {
+      top: -10.5%;
+      left: -11%; }
+    html .m.r1.c0:hover ~ .layer.sea, body .m.r1.c0:hover ~ .layer.sea {
+      top: -11.25%;
+      left: -12.5%; }
+    html .m.r1.c0:hover ~ .layer.front, body .m.r1.c0:hover ~ .layer.front {
+      top: -12.5%;
+      left: -15%; }
+    html .m.r1.c1:hover ~ .layer.back, body .m.r1.c1:hover ~ .layer.back {
+      top: -10.5%;
+      left: -10.5%; }
+    html .m.r1.c1:hover ~ .layer.sea, body .m.r1.c1:hover ~ .layer.sea {
+      top: -11.25%;
+      left: -11.25%; }
+    html .m.r1.c1:hover ~ .layer.front, body .m.r1.c1:hover ~ .layer.front {
+      top: -12.5%;
+      left: -12.5%; }
+    html .m.r1.c2:hover ~ .layer.back, body .m.r1.c2:hover ~ .layer.back {
+      top: -10.5%;
+      left: -10%; }
+    html .m.r1.c2:hover ~ .layer.sea, body .m.r1.c2:hover ~ .layer.sea {
+      top: -11.25%;
+      left: -10%; }
+    html .m.r1.c2:hover ~ .layer.front, body .m.r1.c2:hover ~ .layer.front {
+      top: -12.5%;
+      left: -10%; }
+    html .m.r1.c3:hover ~ .layer.back, body .m.r1.c3:hover ~ .layer.back {
+      top: -10.5%;
+      left: -9.5%; }
+    html .m.r1.c3:hover ~ .layer.sea, body .m.r1.c3:hover ~ .layer.sea {
+      top: -11.25%;
+      left: -8.75%; }
+    html .m.r1.c3:hover ~ .layer.front, body .m.r1.c3:hover ~ .layer.front {
+      top: -12.5%;
+      left: -7.5%; }
+    html .m.r1.c4:hover ~ .layer.back, body .m.r1.c4:hover ~ .layer.back {
+      top: -10.5%;
+      left: -9%; }
+    html .m.r1.c4:hover ~ .layer.sea, body .m.r1.c4:hover ~ .layer.sea {
+      top: -11.25%;
+      left: -7.5%; }
+    html .m.r1.c4:hover ~ .layer.front, body .m.r1.c4:hover ~ .layer.front {
+      top: -12.5%;
+      left: -5%; }
+    html .m.r2.c0:hover ~ .layer.back, body .m.r2.c0:hover ~ .layer.back {
+      top: -10%;
+      left: -11%; }
+    html .m.r2.c0:hover ~ .layer.sea, body .m.r2.c0:hover ~ .layer.sea {
+      top: -10%;
+      left: -12.5%; }
+    html .m.r2.c0:hover ~ .layer.front, body .m.r2.c0:hover ~ .layer.front {
+      top: -10%;
+      left: -15%; }
+    html .m.r2.c1:hover ~ .layer.back, body .m.r2.c1:hover ~ .layer.back {
+      top: -10%;
+      left: -10.5%; }
+    html .m.r2.c1:hover ~ .layer.sea, body .m.r2.c1:hover ~ .layer.sea {
+      top: -10%;
+      left: -11.25%; }
+    html .m.r2.c1:hover ~ .layer.front, body .m.r2.c1:hover ~ .layer.front {
+      top: -10%;
+      left: -12.5%; }
+    html .m.r2.c2:hover ~ .layer.back, body .m.r2.c2:hover ~ .layer.back {
+      top: -10%;
+      left: -10%; }
+    html .m.r2.c2:hover ~ .layer.sea, body .m.r2.c2:hover ~ .layer.sea {
+      top: -10%;
+      left: -10%; }
+    html .m.r2.c2:hover ~ .layer.front, body .m.r2.c2:hover ~ .layer.front {
+      top: -10%;
+      left: -10%; }
+    html .m.r2.c3:hover ~ .layer.back, body .m.r2.c3:hover ~ .layer.back {
+      top: -10%;
+      left: -9.5%; }
+    html .m.r2.c3:hover ~ .layer.sea, body .m.r2.c3:hover ~ .layer.sea {
+      top: -10%;
+      left: -8.75%; }
+    html .m.r2.c3:hover ~ .layer.front, body .m.r2.c3:hover ~ .layer.front {
+      top: -10%;
+      left: -7.5%; }
+    html .m.r2.c4:hover ~ .layer.back, body .m.r2.c4:hover ~ .layer.back {
+      top: -10%;
+      left: -9%; }
+    html .m.r2.c4:hover ~ .layer.sea, body .m.r2.c4:hover ~ .layer.sea {
+      top: -10%;
+      left: -7.5%; }
+    html .m.r2.c4:hover ~ .layer.front, body .m.r2.c4:hover ~ .layer.front {
+      top: -10%;
+      left: -5%; }
+    html .m.r3.c0:hover ~ .layer.back, body .m.r3.c0:hover ~ .layer.back {
+      top: -9.5%;
+      left: -11%; }
+    html .m.r3.c0:hover ~ .layer.sea, body .m.r3.c0:hover ~ .layer.sea {
+      top: -8.75%;
+      left: -12.5%; }
+    html .m.r3.c0:hover ~ .layer.front, body .m.r3.c0:hover ~ .layer.front {
+      top: -7.5%;
+      left: -15%; }
+    html .m.r3.c1:hover ~ .layer.back, body .m.r3.c1:hover ~ .layer.back {
+      top: -9.5%;
+      left: -10.5%; }
+    html .m.r3.c1:hover ~ .layer.sea, body .m.r3.c1:hover ~ .layer.sea {
+      top: -8.75%;
+      left: -11.25%; }
+    html .m.r3.c1:hover ~ .layer.front, body .m.r3.c1:hover ~ .layer.front {
+      top: -7.5%;
+      left: -12.5%; }
+    html .m.r3.c2:hover ~ .layer.back, body .m.r3.c2:hover ~ .layer.back {
+      top: -9.5%;
+      left: -10%; }
+    html .m.r3.c2:hover ~ .layer.sea, body .m.r3.c2:hover ~ .layer.sea {
+      top: -8.75%;
+      left: -10%; }
+    html .m.r3.c2:hover ~ .layer.front, body .m.r3.c2:hover ~ .layer.front {
+      top: -7.5%;
+      left: -10%; }
+    html .m.r3.c3:hover ~ .layer.back, body .m.r3.c3:hover ~ .layer.back {
+      top: -9.5%;
+      left: -9.5%; }
+    html .m.r3.c3:hover ~ .layer.sea, body .m.r3.c3:hover ~ .layer.sea {
+      top: -8.75%;
+      left: -8.75%; }
+    html .m.r3.c3:hover ~ .layer.front, body .m.r3.c3:hover ~ .layer.front {
+      top: -7.5%;
+      left: -7.5%; }
+    html .m.r3.c4:hover ~ .layer.back, body .m.r3.c4:hover ~ .layer.back {
+      top: -9.5%;
+      left: -9%; }
+    html .m.r3.c4:hover ~ .layer.sea, body .m.r3.c4:hover ~ .layer.sea {
+      top: -8.75%;
+      left: -7.5%; }
+    html .m.r3.c4:hover ~ .layer.front, body .m.r3.c4:hover ~ .layer.front {
+      top: -7.5%;
+      left: -5%; }
+    html .m.r4.c0:hover ~ .layer.back, body .m.r4.c0:hover ~ .layer.back {
+      top: -9%;
+      left: -11%; }
+    html .m.r4.c0:hover ~ .layer.sea, body .m.r4.c0:hover ~ .layer.sea {
+      top: -7.5%;
+      left: -12.5%; }
+    html .m.r4.c0:hover ~ .layer.front, body .m.r4.c0:hover ~ .layer.front {
+      top: -5%;
+      left: -15%; }
+    html .m.r4.c1:hover ~ .layer.back, body .m.r4.c1:hover ~ .layer.back {
+      top: -9%;
+      left: -10.5%; }
+    html .m.r4.c1:hover ~ .layer.sea, body .m.r4.c1:hover ~ .layer.sea {
+      top: -7.5%;
+      left: -11.25%; }
+    html .m.r4.c1:hover ~ .layer.front, body .m.r4.c1:hover ~ .layer.front {
+      top: -5%;
+      left: -12.5%; }
+    html .m.r4.c2:hover ~ .layer.back, body .m.r4.c2:hover ~ .layer.back {
+      top: -9%;
+      left: -10%; }
+    html .m.r4.c2:hover ~ .layer.sea, body .m.r4.c2:hover ~ .layer.sea {
+      top: -7.5%;
+      left: -10%; }
+    html .m.r4.c2:hover ~ .layer.front, body .m.r4.c2:hover ~ .layer.front {
+      top: -5%;
+      left: -10%; }
+    html .m.r4.c3:hover ~ .layer.back, body .m.r4.c3:hover ~ .layer.back {
+      top: -9%;
+      left: -9.5%; }
+    html .m.r4.c3:hover ~ .layer.sea, body .m.r4.c3:hover ~ .layer.sea {
+      top: -7.5%;
+      left: -8.75%; }
+    html .m.r4.c3:hover ~ .layer.front, body .m.r4.c3:hover ~ .layer.front {
+      top: -5%;
+      left: -7.5%; }
+    html .m.r4.c4:hover ~ .layer.back, body .m.r4.c4:hover ~ .layer.back {
+      top: -9%;
+      left: -9%; }
+    html .m.r4.c4:hover ~ .layer.sea, body .m.r4.c4:hover ~ .layer.sea {
+      top: -7.5%;
+      left: -7.5%; }
+    html .m.r4.c4:hover ~ .layer.front, body .m.r4.c4:hover ~ .layer.front {
+      top: -5%;
+      left: -5%; }
+  html .back, body .back {
+    background-image: url("background.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; }
+  html .front, body .front {
+    transform: rotate(-45deg); }
+    html .front .rocket, body .front .rocket {
+      background-image: url("rocket.svg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: block;
+      position: absolute;
+      bottom: 50%;
+      width: 30%;
+      height: 30%;
+      left: 35%; }
+    html .front .thrust, body .front .thrust {
+      display: block;
+      position: absolute;
+      top: 0;
+      width: 30%;
+      height: 100%;
+      left: calc(50% - 2.5vmin); }
+      html .front .thrust .heat, body .front .thrust .heat {
+        height: 100%;
+        display: block;
+        position: absolute; }
+        html .front .thrust .heat .particle, body .front .thrust .heat .particle {
+          display: block;
+          top: 50%;
+          position: absolute;
+          border-radius: 50%;
+          width: 5vmin;
+          height: 5vmin;
+          animation-name: travelFade;
+          animation-duration: .4s;
+          animation-iteration-count: infinite; }
+        html .front .thrust .heat.h1, body .front .thrust .heat.h1 {
+          transform: rotate(-4deg); }
+          html .front .thrust .heat.h1 .particle, body .front .thrust .heat.h1 .particle {
+            animation-delay: -0.19s; }
+        html .front .thrust .heat.h2, body .front .thrust .heat.h2 {
+          transform: rotate(-5deg); }
+          html .front .thrust .heat.h2 .particle, body .front .thrust .heat.h2 .particle {
+            animation-delay: -0.38s; }
+        html .front .thrust .heat.h3, body .front .thrust .heat.h3 {
+          transform: rotate(9deg); }
+          html .front .thrust .heat.h3 .particle, body .front .thrust .heat.h3 .particle {
+            animation-delay: -0.57s; }
+        html .front .thrust .heat.h4, body .front .thrust .heat.h4 {
+          transform: rotate(2deg); }
+          html .front .thrust .heat.h4 .particle, body .front .thrust .heat.h4 .particle {
+            animation-delay: -0.76s; }
+        html .front .thrust .heat.h5, body .front .thrust .heat.h5 {
+          transform: rotate(6deg); }
+          html .front .thrust .heat.h5 .particle, body .front .thrust .heat.h5 .particle {
+            animation-delay: -0.95s; }
+        html .front .thrust .heat.h6, body .front .thrust .heat.h6 {
+          transform: rotate(-9deg); }
+          html .front .thrust .heat.h6 .particle, body .front .thrust .heat.h6 .particle {
+            animation-delay: -1.14s; }
+        html .front .thrust .heat.h7, body .front .thrust .heat.h7 {
+          transform: rotate(-3deg); }
+          html .front .thrust .heat.h7 .particle, body .front .thrust .heat.h7 .particle {
+            animation-delay: -1.33s; }
+        html .front .thrust .heat.h8, body .front .thrust .heat.h8 {
+          transform: rotate(-3deg); }
+          html .front .thrust .heat.h8 .particle, body .front .thrust .heat.h8 .particle {
+            animation-delay: -1.52s; }
+        html .front .thrust .heat.h9, body .front .thrust .heat.h9 {
+          transform: rotate(10deg); }
+          html .front .thrust .heat.h9 .particle, body .front .thrust .heat.h9 .particle {
+            animation-delay: -1.71s; }
+        html .front .thrust .heat.h10, body .front .thrust .heat.h10 {
+          transform: rotate(-9deg); }
+          html .front .thrust .heat.h10 .particle, body .front .thrust .heat.h10 .particle {
+            animation-delay: -1.9s; }
+        html .front .thrust .heat.h11, body .front .thrust .heat.h11 {
+          transform: rotate(-5deg); }
+          html .front .thrust .heat.h11 .particle, body .front .thrust .heat.h11 .particle {
+            animation-delay: -2.09s; }
+        html .front .thrust .heat.h12, body .front .thrust .heat.h12 {
+          transform: rotate(-3deg); }
+          html .front .thrust .heat.h12 .particle, body .front .thrust .heat.h12 .particle {
+            animation-delay: -2.28s; }
+        html .front .thrust .heat.h13, body .front .thrust .heat.h13 {
+          transform: rotate(7deg); }
+          html .front .thrust .heat.h13 .particle, body .front .thrust .heat.h13 .particle {
+            animation-delay: -2.47s; }
+        html .front .thrust .heat.h14, body .front .thrust .heat.h14 {
+          transform: rotate(-4deg); }
+          html .front .thrust .heat.h14 .particle, body .front .thrust .heat.h14 .particle {
+            animation-delay: -2.66s; }
+        html .front .thrust .heat.h15, body .front .thrust .heat.h15 {
+          transform: rotate(8deg); }
+          html .front .thrust .heat.h15 .particle, body .front .thrust .heat.h15 .particle {
+            animation-delay: -2.85s; }
+        html .front .thrust .heat.h16, body .front .thrust .heat.h16 {
+          transform: rotate(7deg); }
+          html .front .thrust .heat.h16 .particle, body .front .thrust .heat.h16 .particle {
+            animation-delay: -3.04s; }
+        html .front .thrust .heat.h17, body .front .thrust .heat.h17 {
+          transform: rotate(5deg); }
+          html .front .thrust .heat.h17 .particle, body .front .thrust .heat.h17 .particle {
+            animation-delay: -3.23s; }
+        html .front .thrust .heat.h18, body .front .thrust .heat.h18 {
+          transform: rotate(-8deg); }
+          html .front .thrust .heat.h18 .particle, body .front .thrust .heat.h18 .particle {
+            animation-delay: -3.42s; }
+        html .front .thrust .heat.h19, body .front .thrust .heat.h19 {
+          transform: rotate(-9deg); }
+          html .front .thrust .heat.h19 .particle, body .front .thrust .heat.h19 .particle {
+            animation-delay: -3.61s; }
+        html .front .thrust .heat.h20, body .front .thrust .heat.h20 {
+          transform: rotate(7deg); }
+          html .front .thrust .heat.h20 .particle, body .front .thrust .heat.h20 .particle {
+            animation-delay: -3.8s; }
+        html .front .thrust .heat.h21, body .front .thrust .heat.h21 {
+          transform: rotate(2deg); }
+          html .front .thrust .heat.h21 .particle, body .front .thrust .heat.h21 .particle {
+            animation-delay: -3.99s; }
+        html .front .thrust .heat.h22, body .front .thrust .heat.h22 {
+          transform: rotate(-1deg); }
+          html .front .thrust .heat.h22 .particle, body .front .thrust .heat.h22 .particle {
+            animation-delay: -4.18s; }
+        html .front .thrust .heat.h23, body .front .thrust .heat.h23 {
+          transform: rotate(-3deg); }
+          html .front .thrust .heat.h23 .particle, body .front .thrust .heat.h23 .particle {
+            animation-delay: -4.37s; }
+        html .front .thrust .heat.h24, body .front .thrust .heat.h24 {
+          transform: rotate(-6deg); }
+          html .front .thrust .heat.h24 .particle, body .front .thrust .heat.h24 .particle {
+            animation-delay: -4.56s; }
+        html .front .thrust .heat.h25, body .front .thrust .heat.h25 {
+          transform: rotate(3deg); }
+          html .front .thrust .heat.h25 .particle, body .front .thrust .heat.h25 .particle {
+            animation-delay: -4.75s; }
+        html .front .thrust .heat.h26, body .front .thrust .heat.h26 {
+          transform: rotate(-3deg); }
+          html .front .thrust .heat.h26 .particle, body .front .thrust .heat.h26 .particle {
+            animation-delay: -4.94s; }
+        html .front .thrust .heat.h27, body .front .thrust .heat.h27 {
+          transform: rotate(-8deg); }
+          html .front .thrust .heat.h27 .particle, body .front .thrust .heat.h27 .particle {
+            animation-delay: -5.13s; }
+        html .front .thrust .heat.h28, body .front .thrust .heat.h28 {
+          transform: rotate(3deg); }
+          html .front .thrust .heat.h28 .particle, body .front .thrust .heat.h28 .particle {
+            animation-delay: -5.32s; }
+        html .front .thrust .heat.h29, body .front .thrust .heat.h29 {
+          transform: rotate(-5deg); }
+          html .front .thrust .heat.h29 .particle, body .front .thrust .heat.h29 .particle {
+            animation-delay: -5.51s; }
+        html .front .thrust .heat.h30, body .front .thrust .heat.h30 {
+          transform: rotate(-5deg); }
+          html .front .thrust .heat.h30 .particle, body .front .thrust .heat.h30 .particle {
+            animation-delay: -5.7s; }
+        html .front .thrust .heat.h31, body .front .thrust .heat.h31 {
+          transform: rotate(-2deg); }
+          html .front .thrust .heat.h31 .particle, body .front .thrust .heat.h31 .particle {
+            animation-delay: -5.89s; }
+        html .front .thrust .heat.h32, body .front .thrust .heat.h32 {
+          transform: rotate(-5deg); }
+          html .front .thrust .heat.h32 .particle, body .front .thrust .heat.h32 .particle {
+            animation-delay: -6.08s; }
+        html .front .thrust .heat.h33, body .front .thrust .heat.h33 {
+          transform: rotate(4deg); }
+          html .front .thrust .heat.h33 .particle, body .front .thrust .heat.h33 .particle {
+            animation-delay: -6.27s; }
+        html .front .thrust .heat.h34, body .front .thrust .heat.h34 {
+          transform: rotate(0deg); }
+          html .front .thrust .heat.h34 .particle, body .front .thrust .heat.h34 .particle {
+            animation-delay: -6.46s; }
+        html .front .thrust .heat.h35, body .front .thrust .heat.h35 {
+          transform: rotate(10deg); }
+          html .front .thrust .heat.h35 .particle, body .front .thrust .heat.h35 .particle {
+            animation-delay: -6.65s; }
+        html .front .thrust .heat.h36, body .front .thrust .heat.h36 {
+          transform: rotate(10deg); }
+          html .front .thrust .heat.h36 .particle, body .front .thrust .heat.h36 .particle {
+            animation-delay: -6.84s; }
+        html .front .thrust .heat.h37, body .front .thrust .heat.h37 {
+          transform: rotate(-1deg); }
+          html .front .thrust .heat.h37 .particle, body .front .thrust .heat.h37 .particle {
+            animation-delay: -7.03s; }
+        html .front .thrust .heat.h38, body .front .thrust .heat.h38 {
+          transform: rotate(-7deg); }
+          html .front .thrust .heat.h38 .particle, body .front .thrust .heat.h38 .particle {
+            animation-delay: -7.22s; }
+        html .front .thrust .heat.h39, body .front .thrust .heat.h39 {
+          transform: rotate(0deg); }
+          html .front .thrust .heat.h39 .particle, body .front .thrust .heat.h39 .particle {
+            animation-delay: -7.41s; }
+
+@keyframes travelFade {
+  0% {
+    background-color: rgba(255, 70, 0, 0.8); }
+  100% {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(75vh) scale(1.75); } }

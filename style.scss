@@ -34,7 +34,7 @@ html,body {
         height: 120%;
         top: -10%;
         left: -10%;
-        transition: all .5s ease;
+        transition: top 1s ease, left 1s ease;
     }
 
     .m {
@@ -63,7 +63,7 @@ html,body {
     }
 
     .back {
-        background-image: url("https://images.unsplash.com/photo-1464802686167-b939a6910659?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max");
+        background-image: url("background.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -131,5 +131,5 @@ html,body {
 
 @keyframes travelFade {
     0%   {background-color: rgba(255,70,0,0.8)}
-    100% {background-color: rgba(255,255,255,0.3); transform: translateY(55vh) scale(1.75);}
+    100% {background-color: rgba(255,255,255,0.3); transform: translateY(75vh) scale(1.75);}
   }
