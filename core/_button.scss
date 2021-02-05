@@ -1,0 +1,93 @@
+@import "var";
+
+@mixin filledButton() {
+    background-color: $primary;
+    border: 5px $primary solid;
+    color: $contrast;
+}
+
+@mixin emptyButton() {
+    background-color: transparent;
+    border: 5px $primary solid;
+    color: $primary;
+}
+
+@mixin buttonSizing($width) {
+    width: $width;
+
+    &#stateEarth {
+        left: calc(50vw - #{$width / 2 + $width + $spacing});
+    }
+
+    &#stateTransfer {
+        left: calc(50vw - #{$width / 2});
+    }
+
+    &#stateMoon {
+        left: calc(50vw + #{$width / 2 + $spacing});
+    }
+}
+
+// ######################################
+// the state machine works by using the focused event of buttons
+button {
+    $baseSize: 100px;
+
+    position: absolute;
+    bottom: 0;
+    z-index: $zIndexButtons;
+    border-radius: 10px;
+    height: $baseSize;
+    background-color: $primary;
+    border-width: 5px;
+    display: block;
+    border: none;
+    transition: color $dur ease, background-color $dur ease;
+    bottom: $spacing;
+
+    @include emptyButton();
+
+    &:focus {
+        border: none;
+        outline: none;
+        animation: buttonPulse 3 * $dur infinite alternate ease;
+    }
+
+    @include buttonSizing($baseSize);
+
+    @media (min-width: $break-s){
+
+    }
+
+    @media (min-width: $break-m){
+        @include buttonSizing($baseSize + 50);
+    }
+
+    @media (min-width: $break-l){
+        @include buttonSizing($baseSize + 50);
+    }
+
+    @media (min-width: $break-xl){
+        @include buttonSizing($baseSize + 75);
+    }
+}
+
+#stateTransfer {
+    &:focus ~ #stateEarth {
+        @include filledButton();
+    }
+}
+
+#stateMoon {
+    &:focus ~ #stateEarth {
+        @include filledButton();
+    }
+    &:focus ~ #stateTransfer {
+        @include filledButton();
+    }
+}
+
+@keyframes buttonPulse {
+    from {@include emptyButton()}
+    to {@include filledButton()}
+}

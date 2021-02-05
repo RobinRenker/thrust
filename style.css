@@ -1,3 +1,103 @@
+@import url("https://fonts.googleapis.com/css?family=Lobster+Two|Poppins");
+button {
+  font-family: 'Lobster Two', cursive;
+  font-size: 24px; }
+
+@media (min-width: 720px) {
+  button {
+    font-size: 24px; } }
+
+@media (min-width: 1024px) {
+  button {
+    font-size: 36px; } }
+
+@media (min-width: 1920px) {
+  button {
+    font-size: 36px; } }
+
+@media (min-width: 2560px) {
+  button {
+    font-size: 48px; } }
+
+button {
+  position: absolute;
+  bottom: 0;
+  z-index: 51;
+  border-radius: 10px;
+  height: 100px;
+  background-color: #ff4444;
+  border-width: 5px;
+  display: block;
+  border: none;
+  transition: color 0.2s ease, background-color 0.2s ease;
+  bottom: 12px;
+  background-color: transparent;
+  border: 5px #ff4444 solid;
+  color: #ff4444;
+  width: 100px; }
+  button:focus {
+    border: none;
+    outline: none;
+    animation: buttonPulse 0.6s infinite alternate ease; }
+  button#stateEarth {
+    left: calc(50vw - 162px); }
+  button#stateTransfer {
+    left: calc(50vw - 50px); }
+  button#stateMoon {
+    left: calc(50vw + 62px); }
+  @media (min-width: 1024px) {
+    button {
+      width: 150px; }
+      button#stateEarth {
+        left: calc(50vw - 237px); }
+      button#stateTransfer {
+        left: calc(50vw - 75px); }
+      button#stateMoon {
+        left: calc(50vw + 87px); } }
+  @media (min-width: 1920px) {
+    button {
+      width: 150px; }
+      button#stateEarth {
+        left: calc(50vw - 237px); }
+      button#stateTransfer {
+        left: calc(50vw - 75px); }
+      button#stateMoon {
+        left: calc(50vw + 87px); } }
+  @media (min-width: 2560px) {
+    button {
+      width: 175px; }
+      button#stateEarth {
+        left: calc(50vw - 274.5px); }
+      button#stateTransfer {
+        left: calc(50vw - 87.5px); }
+      button#stateMoon {
+        left: calc(50vw + 99.5px); } }
+
+#stateTransfer:focus ~ #stateEarth {
+  background-color: #ff4444;
+  border: 5px #ff4444 solid;
+  color: #fff; }
+
+#stateMoon:focus ~ #stateEarth {
+  background-color: #ff4444;
+  border: 5px #ff4444 solid;
+  color: #fff; }
+
+#stateMoon:focus ~ #stateTransfer {
+  background-color: #ff4444;
+  border: 5px #ff4444 solid;
+  color: #fff; }
+
+@keyframes buttonPulse {
+  from {
+    background-color: transparent;
+    border: 5px #ff4444 solid;
+    color: #ff4444; }
+  to {
+    background-color: #ff4444;
+    border: 5px #ff4444 solid;
+    color: #fff; } }
+
 html, body {
   width: 100%;
   height: 100%;
@@ -20,7 +120,7 @@ html, body {
     width: 20%;
     height: 20%;
     display: block;
-    z-index: 99; }
+    z-index: 50; }
     html .m.r1, body .m.r1 {
       top: 20%; }
     html .m.r2, body .m.r2 {
@@ -40,7 +140,7 @@ html, body {
     html .m.r0.c0:hover ~ .layer.back, body .m.r0.c0:hover ~ .layer.back {
       top: -11%;
       left: -11%; }
-    html .m.r0.c0:hover ~ .layer.sea, body .m.r0.c0:hover ~ .layer.sea {
+    html .m.r0.c0:hover ~ .layer.massive, body .m.r0.c0:hover ~ .layer.massive {
       top: -12.5%;
       left: -12.5%; }
     html .m.r0.c0:hover ~ .layer.front, body .m.r0.c0:hover ~ .layer.front {
@@ -49,7 +149,7 @@ html, body {
     html .m.r0.c1:hover ~ .layer.back, body .m.r0.c1:hover ~ .layer.back {
       top: -11%;
       left: -10.5%; }
-    html .m.r0.c1:hover ~ .layer.sea, body .m.r0.c1:hover ~ .layer.sea {
+    html .m.r0.c1:hover ~ .layer.massive, body .m.r0.c1:hover ~ .layer.massive {
       top: -12.5%;
       left: -11.25%; }
     html .m.r0.c1:hover ~ .layer.front, body .m.r0.c1:hover ~ .layer.front {
@@ -58,7 +158,7 @@ html, body {
     html .m.r0.c2:hover ~ .layer.back, body .m.r0.c2:hover ~ .layer.back {
       top: -11%;
       left: -10%; }
-    html .m.r0.c2:hover ~ .layer.sea, body .m.r0.c2:hover ~ .layer.sea {
+    html .m.r0.c2:hover ~ .layer.massive, body .m.r0.c2:hover ~ .layer.massive {
       top: -12.5%;
       left: -10%; }
     html .m.r0.c2:hover ~ .layer.front, body .m.r0.c2:hover ~ .layer.front {
@@ -67,7 +167,7 @@ html, body {
     html .m.r0.c3:hover ~ .layer.back, body .m.r0.c3:hover ~ .layer.back {
       top: -11%;
       left: -9.5%; }
-    html .m.r0.c3:hover ~ .layer.sea, body .m.r0.c3:hover ~ .layer.sea {
+    html .m.r0.c3:hover ~ .layer.massive, body .m.r0.c3:hover ~ .layer.massive {
       top: -12.5%;
       left: -8.75%; }
     html .m.r0.c3:hover ~ .layer.front, body .m.r0.c3:hover ~ .layer.front {
@@ -76,7 +176,7 @@ html, body {
     html .m.r0.c4:hover ~ .layer.back, body .m.r0.c4:hover ~ .layer.back {
       top: -11%;
       left: -9%; }
-    html .m.r0.c4:hover ~ .layer.sea, body .m.r0.c4:hover ~ .layer.sea {
+    html .m.r0.c4:hover ~ .layer.massive, body .m.r0.c4:hover ~ .layer.massive {
       top: -12.5%;
       left: -7.5%; }
     html .m.r0.c4:hover ~ .layer.front, body .m.r0.c4:hover ~ .layer.front {
@@ -85,7 +185,7 @@ html, body {
     html .m.r1.c0:hover ~ .layer.back, body .m.r1.c0:hover ~ .layer.back {
       top: -10.5%;
       left: -11%; }
-    html .m.r1.c0:hover ~ .layer.sea, body .m.r1.c0:hover ~ .layer.sea {
+    html .m.r1.c0:hover ~ .layer.massive, body .m.r1.c0:hover ~ .layer.massive {
       top: -11.25%;
       left: -12.5%; }
     html .m.r1.c0:hover ~ .layer.front, body .m.r1.c0:hover ~ .layer.front {
@@ -94,7 +194,7 @@ html, body {
     html .m.r1.c1:hover ~ .layer.back, body .m.r1.c1:hover ~ .layer.back {
       top: -10.5%;
       left: -10.5%; }
-    html .m.r1.c1:hover ~ .layer.sea, body .m.r1.c1:hover ~ .layer.sea {
+    html .m.r1.c1:hover ~ .layer.massive, body .m.r1.c1:hover ~ .layer.massive {
       top: -11.25%;
       left: -11.25%; }
     html .m.r1.c1:hover ~ .layer.front, body .m.r1.c1:hover ~ .layer.front {
@@ -103,7 +203,7 @@ html, body {
     html .m.r1.c2:hover ~ .layer.back, body .m.r1.c2:hover ~ .layer.back {
       top: -10.5%;
       left: -10%; }
-    html .m.r1.c2:hover ~ .layer.sea, body .m.r1.c2:hover ~ .layer.sea {
+    html .m.r1.c2:hover ~ .layer.massive, body .m.r1.c2:hover ~ .layer.massive {
       top: -11.25%;
       left: -10%; }
     html .m.r1.c2:hover ~ .layer.front, body .m.r1.c2:hover ~ .layer.front {
@@ -112,7 +212,7 @@ html, body {
     html .m.r1.c3:hover ~ .layer.back, body .m.r1.c3:hover ~ .layer.back {
       top: -10.5%;
       left: -9.5%; }
-    html .m.r1.c3:hover ~ .layer.sea, body .m.r1.c3:hover ~ .layer.sea {
+    html .m.r1.c3:hover ~ .layer.massive, body .m.r1.c3:hover ~ .layer.massive {
       top: -11.25%;
       left: -8.75%; }
     html .m.r1.c3:hover ~ .layer.front, body .m.r1.c3:hover ~ .layer.front {
@@ -121,7 +221,7 @@ html, body {
     html .m.r1.c4:hover ~ .layer.back, body .m.r1.c4:hover ~ .layer.back {
       top: -10.5%;
       left: -9%; }
-    html .m.r1.c4:hover ~ .layer.sea, body .m.r1.c4:hover ~ .layer.sea {
+    html .m.r1.c4:hover ~ .layer.massive, body .m.r1.c4:hover ~ .layer.massive {
       top: -11.25%;
       left: -7.5%; }
     html .m.r1.c4:hover ~ .layer.front, body .m.r1.c4:hover ~ .layer.front {
@@ -130,7 +230,7 @@ html, body {
     html .m.r2.c0:hover ~ .layer.back, body .m.r2.c0:hover ~ .layer.back {
       top: -10%;
       left: -11%; }
-    html .m.r2.c0:hover ~ .layer.sea, body .m.r2.c0:hover ~ .layer.sea {
+    html .m.r2.c0:hover ~ .layer.massive, body .m.r2.c0:hover ~ .layer.massive {
       top: -10%;
       left: -12.5%; }
     html .m.r2.c0:hover ~ .layer.front, body .m.r2.c0:hover ~ .layer.front {
@@ -139,7 +239,7 @@ html, body {
     html .m.r2.c1:hover ~ .layer.back, body .m.r2.c1:hover ~ .layer.back {
       top: -10%;
       left: -10.5%; }
-    html .m.r2.c1:hover ~ .layer.sea, body .m.r2.c1:hover ~ .layer.sea {
+    html .m.r2.c1:hover ~ .layer.massive, body .m.r2.c1:hover ~ .layer.massive {
       top: -10%;
       left: -11.25%; }
     html .m.r2.c1:hover ~ .layer.front, body .m.r2.c1:hover ~ .layer.front {
@@ -148,7 +248,7 @@ html, body {
     html .m.r2.c2:hover ~ .layer.back, body .m.r2.c2:hover ~ .layer.back {
       top: -10%;
       left: -10%; }
-    html .m.r2.c2:hover ~ .layer.sea, body .m.r2.c2:hover ~ .layer.sea {
+    html .m.r2.c2:hover ~ .layer.massive, body .m.r2.c2:hover ~ .layer.massive {
       top: -10%;
       left: -10%; }
     html .m.r2.c2:hover ~ .layer.front, body .m.r2.c2:hover ~ .layer.front {
@@ -157,7 +257,7 @@ html, body {
     html .m.r2.c3:hover ~ .layer.back, body .m.r2.c3:hover ~ .layer.back {
       top: -10%;
       left: -9.5%; }
-    html .m.r2.c3:hover ~ .layer.sea, body .m.r2.c3:hover ~ .layer.sea {
+    html .m.r2.c3:hover ~ .layer.massive, body .m.r2.c3:hover ~ .layer.massive {
       top: -10%;
       left: -8.75%; }
     html .m.r2.c3:hover ~ .layer.front, body .m.r2.c3:hover ~ .layer.front {
@@ -166,7 +266,7 @@ html, body {
     html .m.r2.c4:hover ~ .layer.back, body .m.r2.c4:hover ~ .layer.back {
       top: -10%;
       left: -9%; }
-    html .m.r2.c4:hover ~ .layer.sea, body .m.r2.c4:hover ~ .layer.sea {
+    html .m.r2.c4:hover ~ .layer.massive, body .m.r2.c4:hover ~ .layer.massive {
       top: -10%;
       left: -7.5%; }
     html .m.r2.c4:hover ~ .layer.front, body .m.r2.c4:hover ~ .layer.front {
@@ -175,7 +275,7 @@ html, body {
     html .m.r3.c0:hover ~ .layer.back, body .m.r3.c0:hover ~ .layer.back {
       top: -9.5%;
       left: -11%; }
-    html .m.r3.c0:hover ~ .layer.sea, body .m.r3.c0:hover ~ .layer.sea {
+    html .m.r3.c0:hover ~ .layer.massive, body .m.r3.c0:hover ~ .layer.massive {
       top: -8.75%;
       left: -12.5%; }
     html .m.r3.c0:hover ~ .layer.front, body .m.r3.c0:hover ~ .layer.front {
@@ -184,7 +284,7 @@ html, body {
     html .m.r3.c1:hover ~ .layer.back, body .m.r3.c1:hover ~ .layer.back {
       top: -9.5%;
       left: -10.5%; }
-    html .m.r3.c1:hover ~ .layer.sea, body .m.r3.c1:hover ~ .layer.sea {
+    html .m.r3.c1:hover ~ .layer.massive, body .m.r3.c1:hover ~ .layer.massive {
       top: -8.75%;
       left: -11.25%; }
     html .m.r3.c1:hover ~ .layer.front, body .m.r3.c1:hover ~ .layer.front {
@@ -193,7 +293,7 @@ html, body {
     html .m.r3.c2:hover ~ .layer.back, body .m.r3.c2:hover ~ .layer.back {
       top: -9.5%;
       left: -10%; }
-    html .m.r3.c2:hover ~ .layer.sea, body .m.r3.c2:hover ~ .layer.sea {
+    html .m.r3.c2:hover ~ .layer.massive, body .m.r3.c2:hover ~ .layer.massive {
       top: -8.75%;
       left: -10%; }
     html .m.r3.c2:hover ~ .layer.front, body .m.r3.c2:hover ~ .layer.front {
@@ -202,7 +302,7 @@ html, body {
     html .m.r3.c3:hover ~ .layer.back, body .m.r3.c3:hover ~ .layer.back {
       top: -9.5%;
       left: -9.5%; }
-    html .m.r3.c3:hover ~ .layer.sea, body .m.r3.c3:hover ~ .layer.sea {
+    html .m.r3.c3:hover ~ .layer.massive, body .m.r3.c3:hover ~ .layer.massive {
       top: -8.75%;
       left: -8.75%; }
     html .m.r3.c3:hover ~ .layer.front, body .m.r3.c3:hover ~ .layer.front {
@@ -211,7 +311,7 @@ html, body {
     html .m.r3.c4:hover ~ .layer.back, body .m.r3.c4:hover ~ .layer.back {
       top: -9.5%;
       left: -9%; }
-    html .m.r3.c4:hover ~ .layer.sea, body .m.r3.c4:hover ~ .layer.sea {
+    html .m.r3.c4:hover ~ .layer.massive, body .m.r3.c4:hover ~ .layer.massive {
       top: -8.75%;
       left: -7.5%; }
     html .m.r3.c4:hover ~ .layer.front, body .m.r3.c4:hover ~ .layer.front {
@@ -220,7 +320,7 @@ html, body {
     html .m.r4.c0:hover ~ .layer.back, body .m.r4.c0:hover ~ .layer.back {
       top: -9%;
       left: -11%; }
-    html .m.r4.c0:hover ~ .layer.sea, body .m.r4.c0:hover ~ .layer.sea {
+    html .m.r4.c0:hover ~ .layer.massive, body .m.r4.c0:hover ~ .layer.massive {
       top: -7.5%;
       left: -12.5%; }
     html .m.r4.c0:hover ~ .layer.front, body .m.r4.c0:hover ~ .layer.front {
@@ -229,7 +329,7 @@ html, body {
     html .m.r4.c1:hover ~ .layer.back, body .m.r4.c1:hover ~ .layer.back {
       top: -9%;
       left: -10.5%; }
-    html .m.r4.c1:hover ~ .layer.sea, body .m.r4.c1:hover ~ .layer.sea {
+    html .m.r4.c1:hover ~ .layer.massive, body .m.r4.c1:hover ~ .layer.massive {
       top: -7.5%;
       left: -11.25%; }
     html .m.r4.c1:hover ~ .layer.front, body .m.r4.c1:hover ~ .layer.front {
@@ -238,7 +338,7 @@ html, body {
     html .m.r4.c2:hover ~ .layer.back, body .m.r4.c2:hover ~ .layer.back {
       top: -9%;
       left: -10%; }
-    html .m.r4.c2:hover ~ .layer.sea, body .m.r4.c2:hover ~ .layer.sea {
+    html .m.r4.c2:hover ~ .layer.massive, body .m.r4.c2:hover ~ .layer.massive {
       top: -7.5%;
       left: -10%; }
     html .m.r4.c2:hover ~ .layer.front, body .m.r4.c2:hover ~ .layer.front {
@@ -247,7 +347,7 @@ html, body {
     html .m.r4.c3:hover ~ .layer.back, body .m.r4.c3:hover ~ .layer.back {
       top: -9%;
       left: -9.5%; }
-    html .m.r4.c3:hover ~ .layer.sea, body .m.r4.c3:hover ~ .layer.sea {
+    html .m.r4.c3:hover ~ .layer.massive, body .m.r4.c3:hover ~ .layer.massive {
       top: -7.5%;
       left: -8.75%; }
     html .m.r4.c3:hover ~ .layer.front, body .m.r4.c3:hover ~ .layer.front {
@@ -256,21 +356,21 @@ html, body {
     html .m.r4.c4:hover ~ .layer.back, body .m.r4.c4:hover ~ .layer.back {
       top: -9%;
       left: -9%; }
-    html .m.r4.c4:hover ~ .layer.sea, body .m.r4.c4:hover ~ .layer.sea {
+    html .m.r4.c4:hover ~ .layer.massive, body .m.r4.c4:hover ~ .layer.massive {
       top: -7.5%;
       left: -7.5%; }
     html .m.r4.c4:hover ~ .layer.front, body .m.r4.c4:hover ~ .layer.front {
       top: -5%;
       left: -5%; }
   html .back, body .back {
-    background-image: url("background.svg");
+    background-image: url("assets/space.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover; }
   html .front, body .front {
     transform: rotate(-45deg); }
     html .front .rocket, body .front .rocket {
-      background-image: url("rocket.svg");
+      background-image: url("assets/rocket.svg");
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
@@ -302,23 +402,23 @@ html, body {
           animation-duration: .4s;
           animation-iteration-count: infinite; }
         html .front .thrust .heat.h1, body .front .thrust .heat.h1 {
-          transform: rotate(-4deg); }
+          transform: rotate(6deg); }
           html .front .thrust .heat.h1 .particle, body .front .thrust .heat.h1 .particle {
             animation-delay: -0.19s; }
         html .front .thrust .heat.h2, body .front .thrust .heat.h2 {
-          transform: rotate(-5deg); }
+          transform: rotate(5deg); }
           html .front .thrust .heat.h2 .particle, body .front .thrust .heat.h2 .particle {
             animation-delay: -0.38s; }
         html .front .thrust .heat.h3, body .front .thrust .heat.h3 {
-          transform: rotate(9deg); }
+          transform: rotate(2deg); }
           html .front .thrust .heat.h3 .particle, body .front .thrust .heat.h3 .particle {
             animation-delay: -0.57s; }
         html .front .thrust .heat.h4, body .front .thrust .heat.h4 {
-          transform: rotate(2deg); }
+          transform: rotate(-3deg); }
           html .front .thrust .heat.h4 .particle, body .front .thrust .heat.h4 .particle {
             animation-delay: -0.76s; }
         html .front .thrust .heat.h5, body .front .thrust .heat.h5 {
-          transform: rotate(6deg); }
+          transform: rotate(8deg); }
           html .front .thrust .heat.h5 .particle, body .front .thrust .heat.h5 .particle {
             animation-delay: -0.95s; }
         html .front .thrust .heat.h6, body .front .thrust .heat.h6 {
@@ -326,51 +426,51 @@ html, body {
           html .front .thrust .heat.h6 .particle, body .front .thrust .heat.h6 .particle {
             animation-delay: -1.14s; }
         html .front .thrust .heat.h7, body .front .thrust .heat.h7 {
-          transform: rotate(-3deg); }
+          transform: rotate(9deg); }
           html .front .thrust .heat.h7 .particle, body .front .thrust .heat.h7 .particle {
             animation-delay: -1.33s; }
         html .front .thrust .heat.h8, body .front .thrust .heat.h8 {
-          transform: rotate(-3deg); }
+          transform: rotate(-7deg); }
           html .front .thrust .heat.h8 .particle, body .front .thrust .heat.h8 .particle {
             animation-delay: -1.52s; }
         html .front .thrust .heat.h9, body .front .thrust .heat.h9 {
-          transform: rotate(10deg); }
+          transform: rotate(-9deg); }
           html .front .thrust .heat.h9 .particle, body .front .thrust .heat.h9 .particle {
             animation-delay: -1.71s; }
         html .front .thrust .heat.h10, body .front .thrust .heat.h10 {
-          transform: rotate(-9deg); }
+          transform: rotate(5deg); }
           html .front .thrust .heat.h10 .particle, body .front .thrust .heat.h10 .particle {
             animation-delay: -1.9s; }
         html .front .thrust .heat.h11, body .front .thrust .heat.h11 {
-          transform: rotate(-5deg); }
+          transform: rotate(9deg); }
           html .front .thrust .heat.h11 .particle, body .front .thrust .heat.h11 .particle {
             animation-delay: -2.09s; }
         html .front .thrust .heat.h12, body .front .thrust .heat.h12 {
-          transform: rotate(-3deg); }
+          transform: rotate(9deg); }
           html .front .thrust .heat.h12 .particle, body .front .thrust .heat.h12 .particle {
             animation-delay: -2.28s; }
         html .front .thrust .heat.h13, body .front .thrust .heat.h13 {
-          transform: rotate(7deg); }
+          transform: rotate(-7deg); }
           html .front .thrust .heat.h13 .particle, body .front .thrust .heat.h13 .particle {
             animation-delay: -2.47s; }
         html .front .thrust .heat.h14, body .front .thrust .heat.h14 {
-          transform: rotate(-4deg); }
+          transform: rotate(9deg); }
           html .front .thrust .heat.h14 .particle, body .front .thrust .heat.h14 .particle {
             animation-delay: -2.66s; }
         html .front .thrust .heat.h15, body .front .thrust .heat.h15 {
-          transform: rotate(8deg); }
+          transform: rotate(6deg); }
           html .front .thrust .heat.h15 .particle, body .front .thrust .heat.h15 .particle {
             animation-delay: -2.85s; }
         html .front .thrust .heat.h16, body .front .thrust .heat.h16 {
-          transform: rotate(7deg); }
+          transform: rotate(-6deg); }
           html .front .thrust .heat.h16 .particle, body .front .thrust .heat.h16 .particle {
             animation-delay: -3.04s; }
         html .front .thrust .heat.h17, body .front .thrust .heat.h17 {
-          transform: rotate(5deg); }
+          transform: rotate(6deg); }
           html .front .thrust .heat.h17 .particle, body .front .thrust .heat.h17 .particle {
             animation-delay: -3.23s; }
         html .front .thrust .heat.h18, body .front .thrust .heat.h18 {
-          transform: rotate(-8deg); }
+          transform: rotate(1deg); }
           html .front .thrust .heat.h18 .particle, body .front .thrust .heat.h18 .particle {
             animation-delay: -3.42s; }
         html .front .thrust .heat.h19, body .front .thrust .heat.h19 {
@@ -378,23 +478,23 @@ html, body {
           html .front .thrust .heat.h19 .particle, body .front .thrust .heat.h19 .particle {
             animation-delay: -3.61s; }
         html .front .thrust .heat.h20, body .front .thrust .heat.h20 {
-          transform: rotate(7deg); }
+          transform: rotate(10deg); }
           html .front .thrust .heat.h20 .particle, body .front .thrust .heat.h20 .particle {
             animation-delay: -3.8s; }
         html .front .thrust .heat.h21, body .front .thrust .heat.h21 {
-          transform: rotate(2deg); }
+          transform: rotate(0deg); }
           html .front .thrust .heat.h21 .particle, body .front .thrust .heat.h21 .particle {
             animation-delay: -3.99s; }
         html .front .thrust .heat.h22, body .front .thrust .heat.h22 {
-          transform: rotate(-1deg); }
+          transform: rotate(-2deg); }
           html .front .thrust .heat.h22 .particle, body .front .thrust .heat.h22 .particle {
             animation-delay: -4.18s; }
         html .front .thrust .heat.h23, body .front .thrust .heat.h23 {
-          transform: rotate(-3deg); }
+          transform: rotate(2deg); }
           html .front .thrust .heat.h23 .particle, body .front .thrust .heat.h23 .particle {
             animation-delay: -4.37s; }
         html .front .thrust .heat.h24, body .front .thrust .heat.h24 {
-          transform: rotate(-6deg); }
+          transform: rotate(0deg); }
           html .front .thrust .heat.h24 .particle, body .front .thrust .heat.h24 .particle {
             animation-delay: -4.56s; }
         html .front .thrust .heat.h25, body .front .thrust .heat.h25 {
@@ -402,65 +502,107 @@ html, body {
           html .front .thrust .heat.h25 .particle, body .front .thrust .heat.h25 .particle {
             animation-delay: -4.75s; }
         html .front .thrust .heat.h26, body .front .thrust .heat.h26 {
-          transform: rotate(-3deg); }
+          transform: rotate(-5deg); }
           html .front .thrust .heat.h26 .particle, body .front .thrust .heat.h26 .particle {
             animation-delay: -4.94s; }
         html .front .thrust .heat.h27, body .front .thrust .heat.h27 {
-          transform: rotate(-8deg); }
+          transform: rotate(7deg); }
           html .front .thrust .heat.h27 .particle, body .front .thrust .heat.h27 .particle {
             animation-delay: -5.13s; }
         html .front .thrust .heat.h28, body .front .thrust .heat.h28 {
-          transform: rotate(3deg); }
+          transform: rotate(6deg); }
           html .front .thrust .heat.h28 .particle, body .front .thrust .heat.h28 .particle {
             animation-delay: -5.32s; }
         html .front .thrust .heat.h29, body .front .thrust .heat.h29 {
-          transform: rotate(-5deg); }
+          transform: rotate(2deg); }
           html .front .thrust .heat.h29 .particle, body .front .thrust .heat.h29 .particle {
             animation-delay: -5.51s; }
         html .front .thrust .heat.h30, body .front .thrust .heat.h30 {
-          transform: rotate(-5deg); }
+          transform: rotate(2deg); }
           html .front .thrust .heat.h30 .particle, body .front .thrust .heat.h30 .particle {
             animation-delay: -5.7s; }
         html .front .thrust .heat.h31, body .front .thrust .heat.h31 {
-          transform: rotate(-2deg); }
+          transform: rotate(0deg); }
           html .front .thrust .heat.h31 .particle, body .front .thrust .heat.h31 .particle {
             animation-delay: -5.89s; }
         html .front .thrust .heat.h32, body .front .thrust .heat.h32 {
-          transform: rotate(-5deg); }
+          transform: rotate(-1deg); }
           html .front .thrust .heat.h32 .particle, body .front .thrust .heat.h32 .particle {
             animation-delay: -6.08s; }
         html .front .thrust .heat.h33, body .front .thrust .heat.h33 {
-          transform: rotate(4deg); }
+          transform: rotate(1deg); }
           html .front .thrust .heat.h33 .particle, body .front .thrust .heat.h33 .particle {
             animation-delay: -6.27s; }
         html .front .thrust .heat.h34, body .front .thrust .heat.h34 {
-          transform: rotate(0deg); }
+          transform: rotate(1deg); }
           html .front .thrust .heat.h34 .particle, body .front .thrust .heat.h34 .particle {
             animation-delay: -6.46s; }
         html .front .thrust .heat.h35, body .front .thrust .heat.h35 {
-          transform: rotate(10deg); }
+          transform: rotate(-9deg); }
           html .front .thrust .heat.h35 .particle, body .front .thrust .heat.h35 .particle {
             animation-delay: -6.65s; }
         html .front .thrust .heat.h36, body .front .thrust .heat.h36 {
-          transform: rotate(10deg); }
+          transform: rotate(-2deg); }
           html .front .thrust .heat.h36 .particle, body .front .thrust .heat.h36 .particle {
             animation-delay: -6.84s; }
         html .front .thrust .heat.h37, body .front .thrust .heat.h37 {
-          transform: rotate(-1deg); }
+          transform: rotate(4deg); }
           html .front .thrust .heat.h37 .particle, body .front .thrust .heat.h37 .particle {
             animation-delay: -7.03s; }
         html .front .thrust .heat.h38, body .front .thrust .heat.h38 {
-          transform: rotate(-7deg); }
+          transform: rotate(1deg); }
           html .front .thrust .heat.h38 .particle, body .front .thrust .heat.h38 .particle {
             animation-delay: -7.22s; }
         html .front .thrust .heat.h39, body .front .thrust .heat.h39 {
-          transform: rotate(0deg); }
+          transform: rotate(6deg); }
           html .front .thrust .heat.h39 .particle, body .front .thrust .heat.h39 .particle {
             animation-delay: -7.41s; }
+  html .massive .earth, body .massive .earth {
+    width: 100vmin;
+    height: 100vmin;
+    background-image: url("assets/earth.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    top: 50vh;
+    right: 65vw;
+    animation: rotate 300s infinite linear;
+    transition: all 0.2s ease; }
+  html .massive .moon, body .massive .moon {
+    width: 70vmin;
+    height: 70vmin;
+    background-image: url("assets/moon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    bottom: 100vh;
+    left: 100vw;
+    animation: rotate 300s infinite linear;
+    transition: all 0.2s ease; }
+  html #stateTransfer:focus ~ .massive .earth, body #stateTransfer:focus ~ .massive .earth {
+    top: 100vh;
+    right: 100vw; }
+  html #stateMoon:focus ~ .massive .earth, body #stateMoon:focus ~ .massive .earth {
+    top: 100vh;
+    right: 100vw; }
+  html #stateMoon:focus ~ .massive .moon, body #stateMoon:focus ~ .massive .moon {
+    bottom: 70vh;
+    left: 70vw; }
 
 @keyframes travelFade {
   0% {
     background-color: rgba(255, 70, 0, 0.8); }
   100% {
     background-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(75vh) scale(1.75); } }
+    transform: translateY(75vh) scale(1.75);
+    opacity: 0; } }
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(359deg); } }

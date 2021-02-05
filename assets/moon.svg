@@ -1,0 +1,17 @@
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <clipPath id="moon">
+            <circle cx="50" cy="50" r="50" />
+        </clipPath>  
+    </defs>
+
+    <circle cx="50" cy="50" r="50" fill="#e5e5e5"/>
+
+    <g clip-path="url(#moon)" fill="#c9c9c9">
+        
+        <path d="M12,15 l16,-11 12,6 2,6 0,11 -8,-4 -13,7Z"/>
+        <path d="M60,48 l4,-10 13,-12 11,5 0,11 -13,-2 -1,13Z"/>
+        <path d="M11,85 l4,-18 15,2 3,11 18,5 -8,6 -7,11Z"/>
+
+    </g>
+</svg>

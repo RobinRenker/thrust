@@ -1,4 +1,6 @@
-$step: 5%;
+@import "core/font";
+@import "core/var";
+@import "core/button";
 
 @mixin offset($r, $c, $m) {
     top: $step * ($r * $m - 2);
@@ -7,7 +9,7 @@ $step: 5%;
 
 @mixin oGroup($r, $c) {
     &.back{@include offset($r, $c, .1);}
-    &.sea{@include offset($r, $c, .25);}
+    &.massive{@include offset($r, $c, .25);}
     &.front{@include offset($r, $c, 0.5);}
 } 
 
@@ -17,6 +19,16 @@ $step: 5%;
     &.c2:hover ~ .layer {@include oGroup($r, 0);}
     &.c3:hover ~ .layer {@include oGroup($r, 1);}
     &.c4:hover ~ .layer {@include oGroup($r, 2);}
+}
+
+@mixin earthParkposition() {
+    top: 100vh;
+    right: 100vw;
+}
+
+@mixin moonPosition() {
+    bottom: 70vh;
+    left: 70vw;
 }
 
 html,body {
@@ -37,6 +49,8 @@ html,body {
         transition: top 1s ease, left 1s ease;
     }
 
+    // ######################################
+    // the mine field is a bunch of divs which give me the position of the cursor
     .m {
         position: absolute;
         top: 0;
@@ -44,7 +58,7 @@ html,body {
         width: 20%;
         height: 20%;
         display: block;
-        z-index: 99;
+        z-index: $zIndexMineField;
 
         &.r1 {top: 20%;}
         &.r2 {top: 40%;}
@@ -63,18 +77,17 @@ html,body {
     }
 
     .back {
-        background-image: url("background.svg");
+        background-image: url("assets/space.svg");
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        
     }
 
     .front {
         transform: rotate(-45deg);
 
         .rocket {
-            background-image: url("rocket.svg");
+            background-image: url("assets/rocket.svg");
             background-position: center;
             background-repeat: no-repeat;
             background-size: contain;
@@ -127,9 +140,77 @@ html,body {
             }
         }
     }
+
+    // ######################################
+    // the earth
+    .massive {
+        .earth {
+            $earthSize: 100vmin;
+            width: $earthSize;
+            height: $earthSize;
+            background-image: url("assets/earth.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            // by default the earth is not parked
+            top: 50vh;
+            right: 65vw;
+            animation: rotate 60s * 5 infinite linear;
+            transition: all $dur ease;
+        }
+
+        .moon {
+            $earthSize: 70vmin;
+            width: $earthSize;
+            height: $earthSize;
+            background-image: url("assets/moon.svg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            // by default the earth is not parked
+            bottom: 100vh;
+            left: 100vw;
+            animation: rotate 60s * 5 infinite linear;
+            transition: all $dur ease; 
+        }
+    }
+
+    #stateEarth {
+        &:focus ~ .massive {
+
+        }
+    }
+
+    #stateTransfer {
+        &:focus ~ .massive {
+            .earth {
+                @include earthParkposition();
+            }
+        }
+    }
+    
+    #stateMoon {
+        &:focus ~ .massive {
+            .earth {
+                @include earthParkposition();
+            }
+            .moon {
+                @include moonPosition();
+            }
+        }
+    }
 }
 
 @keyframes travelFade {
     0%   {background-color: rgba(255,70,0,0.8)}
-    100% {background-color: rgba(255,255,255,0.3); transform: translateY(75vh) scale(1.75);}
-  }
+    100% {background-color: rgba(255,255,255,0.3); transform: translateY(75vh) scale(1.75); opacity: 0;}
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}
