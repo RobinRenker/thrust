@@ -1,4 +1,5 @@
 @import "var";
+@import "stator";
 
 @mixin filledButton() {
     background-color: $primary;
@@ -30,7 +31,7 @@
 
 // ######################################
 // the state machine works by using the focused event of buttons
-button {
+butt2on {
     $baseSize: 100px;
 
     position: absolute;
@@ -39,6 +40,7 @@ button {
     border-radius: 10px;
     height: $baseSize;
     background-color: $primary;
+
     border-width: 5px;
     display: block;
     border: none;
@@ -72,9 +74,72 @@ button {
     }
 }
 
+.progress {
+    position: absolute;
+    top: 12px;
+    left: 36px;
+    width: 1px;
+    background-color: $primary;
+    height: calc(100% - 24px);
+    z-index: $zIndexButtons;
+
+    &.current {
+        width: 3px;
+        left: 35px;
+        animation-name: progress;
+        animation-duration: 10s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-timing-function: linear;
+    }
+}
+
+button {
+    width: 49px;
+    height: 49px;
+    border-radius: 50%;
+    position: absolute;
+    left: 12px;
+    z-index: $zIndexButtons;
+    background-color: $primary;
+    display: block;
+    transition: color $dur ease, background-color $dur ease;
+    border: none;
+    color: $contrast;
+
+    &:focus {
+        border: none;
+        outline: none;
+    }
+
+    &::after {
+        content: "Test";
+        color: $primary;
+        transform: translateX(48px);
+        display: block;
+    }
+}
+
+$buttons: 4;
+@for $i from 0 through $buttons {
+    button:nth-of-type(#{$i + 1}) {
+        top: calc(#{$i * (100% / $buttons)} + 12px);
+    }
+}
+
+
+#stateEarth {
+    &:focus ~ .front {
+        @include s1();        
+    }
+}
+
 #stateTransfer {
     &:focus ~ #stateEarth {
         @include filledButton();
+    }
+    &:focus ~ .front {
+        @include s2();        
     }
 }
 
@@ -85,9 +150,22 @@ button {
     &:focus ~ #stateTransfer {
         @include filledButton();
     }
+    &:focus ~ .front {
+        @include s3();        
+    }
+}
+
+#test1 {
+    &:focus ~ .front {
+        @include smBuild();        
+    }
 }
 
 @keyframes buttonPulse {
     from {@include emptyButton()}
     to {@include filledButton()}
+}
+
+@keyframes progress {
+    from {height: 0;}
 }
