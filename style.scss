@@ -22,16 +22,6 @@
     &.c4:hover ~ .layer {@include oGroup($r, 2);}
 }
 
-@mixin earthParkposition() {
-    top: 100vh;
-    right: 100vw;
-}
-
-@mixin moonPosition() {
-    bottom: 70vh;
-    left: 70vw;
-}
-
 html,body {
     width: 100%;
     height: 100%;
@@ -89,16 +79,11 @@ html,body {
         .rocket {
             display: block;
             position: absolute;
-
             top: 25%;
-            width: 30%;
-            height: 30%;
             left: 50%;
-
             width: 20vmin;
             height: 110.6vmin;
-
-            transform: scale(.5) rotate(-45deg);
+            transition: transform $dur;
 
             .rocketPart {
                 width: 100%;
@@ -217,31 +202,6 @@ html,body {
             left: 100vw;
             animation: rotate 60s * 5 infinite linear;
             transition: all $dur ease; 
-        }
-    }
-
-    #stateEarth {
-        &:focus ~ .massive {
-
-        }
-    }
-
-    #stateTransfer {
-        &:focus ~ .massive {
-            .earth {
-                @include earthParkposition();
-            }
-        }
-    }
-    
-    #stateMoon {
-        &:focus ~ .massive {
-            .earth {
-                @include earthParkposition();
-            }
-            .moon {
-                @include moonPosition();
-            }
         }
     }
 }
