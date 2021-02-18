@@ -1,0 +1,44 @@
+@mixin earth() {
+    .earth {
+        $earthSize: 100vmin;
+        
+        width: $earthSize;
+        height: $earthSize;
+        background-image: url("assets/earth.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        position: absolute;
+        // by default the earth is not parked
+        top: $planeHeight;
+        right: $planeWidth;
+        animation: rotate 60s * 5 infinite linear;
+        transition: all $dur ease;
+    }
+}
+
+@mixin moon() {
+    .moon {
+        $earthSize: 70vmin;
+
+        width: $earthSize;
+        height: $earthSize;
+        background-image: url("assets/moon.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        position: absolute;
+        // by default the earth is not parked
+        bottom: 100vh;
+        left: 100vw;
+        animation: rotate 60s * 5 infinite linear;
+        transition: all $dur ease; 
+    }
+}
+
+@keyframes rotate {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+}

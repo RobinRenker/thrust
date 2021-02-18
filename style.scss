@@ -2,6 +2,8 @@
 @import "core/var";
 @import "core/button";
 @import "core/stator";
+@import "core/rocket";
+@import "core/massive";
 
 @mixin offset($r, $c, $m) {
     top: $step * ($r * $m - 2);
@@ -33,11 +35,11 @@ html,body {
 
     .layer {
         position: absolute;
-        width: 120%;
-        height: 120%;
-        top: -10%;
-        left: -10%;
-        transition: top 1s ease, left 1s ease;
+        width: $planeWidth;
+        height: $planeHeight;
+        top: -($planeHeight - 100) / 2;
+        left: -($planeWidth - 100) / 2;
+        transition: top $durLong ease, left $durLong ease;
     }
 
     // ######################################
@@ -75,147 +77,13 @@ html,body {
     }
 
     .front {
-    
-        .rocket {
-            display: block;
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            width: 20vmin;
-            height: 110.6vmin;
-            transition: transform $dur;
-
-            .rocketPart {
-                width: 100%;
-                height: 100%;
-                display: block;
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-
-                animation-duration: 3s;
-                animation-fill-mode: forwards;
-                animation-iteration-count: 1;
-                animation-timing-function: ease-in;
-            }
-
-            .s1 {
-                background-image: url("assets/s1.svg");
-            }
-            
-            .s2 {
-                background-image: url("assets/s2.svg");
-            }
-
-            .s3 {
-                background-image: url("assets/s3.svg");
-            }
-
-            .sm {
-                background-image: url("assets/sm.svg");
-            }
-
-            .lm {
-                background-image: url("assets/lm.svg");
-            }
-
-            .cm {
-                background-image: url("assets/cm.svg");
-            }
-            
-            .f1 {
-                background-image: url("assets/f1.svg");
-            }
-
-            .f2 {
-                background-image: url("assets/f2.svg");
-            }
-
-            .f3 {
-                background-image: url("assets/f3.svg");
-            }
-        }
-
-        .flame {
-            display: block;
-            width: 10vmin;
-            height: 25.5vmin;
-            position: absolute;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-image: url("assets/flame.svg");
-
-            opacity: 0;
-            display: none;
-            animation: flame $dur infinite, fade 1s 2s 1 forwards;
-
-            $fireDelay: 1s;
-
-            &.flame1 {
-               animation-delay: $fireDelay;
-            }
-            &.flame2 {
-                animation-delay: $fireDelay - .06s;
-            }
-            &.flame3 {
-                animation-delay: $fireDelay - .12s;
-            }
-        }
+        @include rocket();
     }
 
     // ######################################
     // the earth
     .massive {
-        .earth {
-            $earthSize: 100vmin;
-            width: $earthSize;
-            height: $earthSize;
-            background-image: url("assets/earth.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            display: block;
-            position: absolute;
-            // by default the earth is not parked
-            top: 50vh;
-            right: 65vw;
-            animation: rotate 60s * 5 infinite linear;
-            transition: all $dur ease;
-        }
-
-        .moon {
-            $earthSize: 70vmin;
-            width: $earthSize;
-            height: $earthSize;
-            background-image: url("assets/moon.svg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
-            display: block;
-            position: absolute;
-            // by default the earth is not parked
-            bottom: 100vh;
-            left: 100vw;
-            animation: rotate 60s * 5 infinite linear;
-            transition: all $dur ease; 
-        }
+        @include earth();
+        @include moon();
     }
-}
-
-@keyframes flame {
-    50% {transform: scale(1, 1.05) translateY(10px)}
-}
-
-@keyframes rotate {
-    from {transform: rotate(0deg);}
-    to {transform: rotate(359deg);}
-}
-
-@keyframes fade {
-    from {opacity: 0;}
-    to {opacity: 1;}
 }
