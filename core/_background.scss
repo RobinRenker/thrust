@@ -1,0 +1,48 @@
+@import "var";
+
+@mixin background() {
+    .cloud {
+        position: absolute;
+        top: 0;
+        right: $planeWidth;
+        width: 30vmin;
+        height: 30vmin;
+        display: block;
+
+        background-image: url("assets/cloud.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        &.cloud1 {
+            top: 35vmin;
+        }
+
+        &.cloud2 {
+            top: 25vmin;
+        }
+    }
+}
+
+@mixin space() {
+    background-image: url("assets/space.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@mixin atmosphere() {
+    background-image: url("assets/sphere.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .cloud1 {
+        right: 15vw;
+    }
+
+    .cloud2 {
+        right: auto;
+        left: 15vw;
+    }
+}

@@ -1,5 +1,7 @@
 @import "var";
 @import "stator";
+@import "background";
+@import "rocket";
 
 @mixin filledButton() {
     background-color: $primary;
@@ -120,7 +122,10 @@ $buttons: 4;
 
 #stateBreach {
     &:focus ~ .front {
-        @include s1();        
+        @include stage1();        
+    }
+    &:focus ~ .background {
+        @include atmosphere();     
     }
 }
 
@@ -141,6 +146,9 @@ $buttons: 4;
             top: $planeHeight / 2;
             left: 10vw;
         }
+    }
+    &:focus ~ .background {
+        @include space();     
     }
 }
 

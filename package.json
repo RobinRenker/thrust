@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "scripts": {
-        "scss": "node-sass --watch style.scss -o ."
+        "scss": "node-sass --watch style.scss -o . --output-style compressed"
     },
     "author": "robinrenker",
     "dependencies": {

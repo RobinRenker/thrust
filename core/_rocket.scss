@@ -1,5 +1,8 @@
 $flameHeight: 25.5vmin;
-$stretch: 0.05;
+$flameWidth: 10vmin;
+$flameStretch: 0.05;
+$rocketWidth: 20vmin;
+$rocketHeight: 110.6vmin;
 
 @mixin rocket() {
 
@@ -8,8 +11,8 @@ $stretch: 0.05;
         position: absolute;
         top: 25%;
         left: 50%;
-        width: 20vmin;
-        height: 110.6vmin;
+        width: $rocketWidth;
+        height: $rocketHeight;
         transition: transform $dur;
 
         .rocketPart {
@@ -30,8 +33,7 @@ $stretch: 0.05;
         }
         
         .flame {
-            display: block;
-            width: 10vmin;
+            width: $flameWidth;
             height: $flameHeight;
             position: absolute;
             background-position: center;
@@ -94,8 +96,49 @@ $stretch: 0.05;
     }
 }
 
+// #########################################################
+
+@mixin stage1() {
+    .rocket {
+
+        $scale: .5;
+        $scaledWidth: $rocketWidth * $scale;
+        $scaledHeight: $rocketHeight * $scale;
+
+        width: $scaledWidth;
+        height: $scaledHeight;
+
+        left: calc(#{$planeWidth / 2} - #{($scaledWidth / 2)});
+        top: calc(#{$planeHeight / 2} - #{($scaledHeight / 2)});
+
+        .flame {
+            $scaledFlameWidth: $flameWidth * $scale;
+            $scaledFlameHeight: $flameHeight * $scale;
+            $scaledCenterFlame: $scaledWidth / 2 - $scaledFlameWidth / 2;
+
+            display: block; // retriggers the animation
+            top: $scaledHeight;
+            width: $scaledFlameWidth;
+            height: $scaledFlameHeight;
+
+
+            &.flame1 {
+                left: $scaledCenterFlame - $scaledFlameWidth * .5;
+            }
+            &.flame2 {
+                left: $scaledCenterFlame + $scaledFlameWidth * .5;
+            }
+            &.flame3 {
+                left: $scaledCenterFlame;
+            }
+        }
+    }
+}
+
+// #########################################################
+
 @keyframes flame {
-    50% {transform: scale(1, 1 + $stretch) translateY($flameHeight * $stretch / 2)}
+    50% {transform: scale(1, 1 + $flameStretch) translateY($flameHeight * $flameStretch / 2)}
 }
 
 @keyframes fade {

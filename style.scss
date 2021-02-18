@@ -4,6 +4,7 @@
 @import "core/stator";
 @import "core/rocket";
 @import "core/massive";
+@import "core/background";
 
 @mixin offset($r, $c, $m) {
     top: $step * ($r * $m - 2);
@@ -11,7 +12,7 @@
 }
 
 @mixin oGroup($r, $c) {
-    &.back{@include offset($r, $c, .1);}
+    &.background{@include offset($r, $c, .1);}
     &.massive{@include offset($r, $c, .25);}
     &.front{@include offset($r, $c, 0.5);}
 } 
@@ -69,19 +70,14 @@ html,body {
         &.r4 {@include column(2);}
     }
 
-    .back {
-        background-image: url("assets/space.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+    .background {
+        @include background();
     }
 
     .front {
         @include rocket();
     }
 
-    // ######################################
-    // the earth
     .massive {
         @include earth();
         @include moon();

@@ -117,27 +117,7 @@
     }
 }
 
-@mixin s1() {
-    .rocket {
 
-        transform: scale(0.5);
-
-        .flame {
-            top: 110.6vmin;
-            display: block;
-
-            &.flame1 {
-                left: 5vmin;
-            }
-            &.flame2 {
-                left: 1vmin;
-            }
-            &.flame3 {
-                left: 9vmin;
-            }
-        }
-    }
-}
 
 @keyframes drop1 {
     from {top: 0}
