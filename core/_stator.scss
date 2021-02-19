@@ -80,11 +80,12 @@
 @mixin s3() {
     @include beDroppedS1();
     @include dropS2();
+    @include scaleRocket(.5);
 
     .rocket { 
-
-        transform: scale(0.5) rotate(-90deg);
+        
         top: 0;
+        transform: rotate(-90deg);
 
         .flame1 {
             left: 5vmin;

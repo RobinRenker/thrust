@@ -122,7 +122,7 @@ $buttons: 4;
 
 #stateBreach {
     &:focus ~ .front {
-        @include stage1();        
+        @include scaleRocket(.5);        
     }
     &:focus ~ .background {
         @include atmosphere();     
@@ -132,6 +132,9 @@ $buttons: 4;
 #stateVelocity {
     &:focus ~ .front {
         @include s2();        
+    }
+    &:focus ~ .background {
+        @include space();     
     }
 }
 

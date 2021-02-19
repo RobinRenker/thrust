@@ -49,6 +49,11 @@
     .space {
         display: block;
     }
+
+    .atmosphere {
+        display: block;
+        animation: dropAtmosphere 1s forwards
+    }
 }
 
 @mixin atmosphere() {
@@ -68,4 +73,8 @@
         right: auto;
         left: 15vw;
     }
+}
+
+@keyframes dropAtmosphere {
+    to {top: $planeHeight}
 }

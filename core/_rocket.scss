@@ -43,9 +43,7 @@ $rocketHeight: 110.6vmin;
 
             opacity: 0;
             display: none;
-            animation: flame $dur infinite, fade 1s 2s 1 forwards;
-
-            $fireDelay: 1s;
+            $fireDelay: .5s;
 
             &.flame1 {
                animation-delay: $fireDelay;
@@ -96,12 +94,8 @@ $rocketHeight: 110.6vmin;
     }
 }
 
-// #########################################################
-
-@mixin stage1() {
+@mixin scaleRocket($scale) {
     .rocket {
-
-        $scale: .5;
         $scaledWidth: $rocketWidth * $scale;
         $scaledHeight: $rocketHeight * $scale;
 
@@ -121,25 +115,27 @@ $rocketHeight: 110.6vmin;
             width: $scaledFlameWidth;
             height: $scaledFlameHeight;
 
+            $scaledFlameAnimation: rocketFlame + (10 * $scale);
+            animation: $scaledFlameAnimation $dur infinite, fade 1s 2s 1 forwards;
+
+            @keyframes #{$scaledFlameAnimation} {
+                50% {transform: scale(1, 1 + $flameStretch) translateY($scaledFlameHeight * $flameStretch / 2)}
+            }
 
             &.flame1 {
-                left: $scaledCenterFlame - $scaledFlameWidth * .5;
+                left: $scaledCenterFlame;
             }
             &.flame2 {
-                left: $scaledCenterFlame + $scaledFlameWidth * .5;
+                left: $scaledCenterFlame - $scaledFlameWidth * .4;
             }
             &.flame3 {
-                left: $scaledCenterFlame;
+                left: $scaledCenterFlame + $scaledFlameWidth * .4;
             }
         }
     }
 }
 
 // #########################################################
-
-@keyframes flame {
-    50% {transform: scale(1, 1 + $flameStretch) translateY($flameHeight * $flameStretch / 2)}
-}
 
 @keyframes fade {
     from {opacity: 0;}
