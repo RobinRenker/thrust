@@ -8,12 +8,13 @@ $rocketHeight: 110.6vmin;
 
     .rocket {
         display: block;
-        position: absolute;
+        //position: absolute;
         left: calc(#{$planeWidth / 2} - #{$rocketWidth / 2});
         top: calc(#{$planeHeight / 2} - #{$rocketHeight / 2});
         width: $rocketWidth;
         //height: $rocketHeight;
         transform: rotate(-15deg);
+        transition: height 1s;
 
         z-index: $zIndexRocket;
 
@@ -45,6 +46,7 @@ $rocketHeight: 110.6vmin;
 
             &:hover {
                 margin: 1vmin 0;
+                cursor: pointer;
             }
 
             &:focus {
@@ -79,36 +81,69 @@ $rocketHeight: 110.6vmin;
                     height: 17vmin;
                     background-image: url("assets/s3.svg");
                 }
+
+                .flame {
+                    $centerFlame: $rocketWidth / 2 - $flameWidth / 2;
+
+                    top: 17vmin;
+                    left: $centerFlame;
+                }
+                
+                &:focus {
+                    .flame {
+                        display: block;
+                    }
+                }
+
+                @include drop4();
             }
 
             &.f2 {
                 height: 6.8vmin;
                 background-image: url("assets/f2.svg");
- 
+                @include drop3();
             }
 
             &.s2 {
                 height: 18.9vmin;
+                
                 .print {
                     height: 24.6vmin;
                     background-image: url("assets/s2.svg");
                 }
+                
+                .flame {
+                    top: 24.6vmin;
 
-                &:focus ~ .f1 {
-                    @include drop2();
+                    $centerFlame: $rocketWidth / 2 - $flameWidth / 2;
+                    $offsetFlame: 2vmin;
+
+                    &.flame1 {
+                        left: $centerFlame;
+                    }
+
+                    &.flame2 {
+                        left: $centerFlame - $offsetFlame;
+                    }
+
+                    &.flame3 {
+                        left: $centerFlame + $offsetFlame;
+                    }
                 }
-                &:focus ~ .s1 {
-                    @include dropS2();
+                
+                @include drop2();
+                
+                &:focus {
+                    .flame {
+                        display: block;
+                    }
                 }
             }
 
             &.f1 {
                 height: 6.1vmin;
                 background-image: url("assets/f1.svg");
-
-                &:focus ~ .s1 {
-                    @include dropS2();
-                }
+                @include drop1();
             }
 
             &.s1 {
@@ -147,7 +182,7 @@ $rocketHeight: 110.6vmin;
             
             opacity: 0;
             display: none;
-            animation: flame $dur infinite, fade 1s 2s 1 forwards;
+            animation: flame $dur infinite, fade 1s 1s 1 forwards;
 
             $fireDelay: .5s;
 
@@ -164,62 +199,43 @@ $rocketHeight: 110.6vmin;
     }
 }
 
-@mixin scaleRocket($scale) {
-    .rocket {
-        $scaledWidth: $rocketWidth * $scale;
-        $scaledHeight: $rocketHeight * $scale;
+// #########################################################
 
-        width: $scaledWidth;
-        height: $scaledHeight;
-
-        left: calc(#{$planeWidth / 2} - #{($scaledWidth / 2)});
-        top: calc(#{$planeHeight / 2} - #{($scaledHeight / 2)});
-
-        .flame {
-            $scaledFlameWidth: $flameWidth * $scale;
-            $scaledFlameHeight: $flameHeight * $scale;
-            $scaledCenterFlame: $scaledWidth / 2 - $scaledFlameWidth / 2;
-
-            display: block; // retriggers the animation
-            top: $scaledHeight;
-            width: $scaledFlameWidth;
-            height: $scaledFlameHeight;
-
-            $scaledFlameAnimation: rocketFlame + (10 * $scale);
-            animation: $scaledFlameAnimation $dur infinite, fade 1s 2s 1 forwards;
-
-            @keyframes #{$scaledFlameAnimation} {
-                50% {transform: scale(1, 1 + $flameStretch) translateY($scaledFlameHeight * $flameStretch / 2)}
-            }
-
-            &.flame1 {
-                left: $scaledCenterFlame;
-            }
-            &.flame2 {
-                left: $scaledCenterFlame - $scaledFlameWidth * .4;
-            }
-            &.flame3 {
-                left: $scaledCenterFlame + $scaledFlameWidth * .4;
-            }
-        }
+@mixin drop4() {
+    @include drop3();
+    &:focus ~ .f2 {
+        @include dropRight();
     }
 }
 
-// #########################################################
+@mixin drop3() {
+    @include drop2();
+    &:focus ~ .s2 {
+        @include dropLeft();
+    }
+}
 
-@mixin dropS2() {
+@mixin drop2() {
     @include drop1();
-
-    .flame {
-        display: none;
+    &:focus ~ .f1 {
+        @include dropRight();
     }
 }
 
 @mixin drop1() {
+    &:focus ~ .s1 {
+        @include dropLeft();
+        .flame {
+            display: none;
+        }
+    }
+}
+
+@mixin dropLeft() {
     transform: translateY($planeHeight) rotate(15deg);
 }
 
-@mixin drop2() {
+@mixin dropRight() {
     transform: translateY($planeHeight) rotate(-15deg);
 }
 

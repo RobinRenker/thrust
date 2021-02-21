@@ -75,6 +75,9 @@ html,body {
 
     .front {
         @include rocket();
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .massive {
