@@ -9,27 +9,131 @@ $rocketHeight: 110.6vmin;
     .rocket {
         display: block;
         position: absolute;
-        top: 25%;
-        left: 50%;
+        left: calc(#{$planeWidth / 2} - #{$rocketWidth / 2});
+        top: calc(#{$planeHeight / 2} - #{$rocketHeight / 2});
         width: $rocketWidth;
-        height: $rocketHeight;
-        transition: transform $dur;
+        //height: $rocketHeight;
+        transform: rotate(-15deg);
+
+        z-index: $zIndexRocket;
 
         .rocketPart {
             width: 100%;
-            height: 100%;
             display: block;
+            transition: margin $dur, transform 2s;
+            border: none;
+            position: relative;
+
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
+            background-color: transparent;
 
-            animation-duration: 3s;
             animation-fill-mode: forwards;
+            animation-duration: 2s;
             animation-iteration-count: 1;
             animation-timing-function: ease-in;
+
+            .print {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+
+            &:hover {
+                margin: 1vmin 0;
+            }
+
+            &:focus {
+                outline: none;
+            }
+
+            &.escape {
+                background-image: url("assets/escape.svg");
+                height: 7.9vmin;
+            }
+
+            &.cm {
+                height: 3.1vmin;
+                background-image: url("assets/cm.svg");
+            }
+
+            &.lm {
+                height: 7vmin;
+                background-image: url("assets/lm.svg");
+            }
+
+            &.sm {
+                height: 4.7vmin;
+                background-image: url("assets/sm.svg");
+              
+            }
+
+            &.s3 {
+                height: 12.2vmin;
+    
+                .print {
+                    height: 17vmin;
+                    background-image: url("assets/s3.svg");
+                }
+            }
+
+            &.f2 {
+                height: 6.8vmin;
+                background-image: url("assets/f2.svg");
+ 
+            }
+
+            &.s2 {
+                height: 18.9vmin;
+                .print {
+                    height: 24.6vmin;
+                    background-image: url("assets/s2.svg");
+                }
+
+                &:focus ~ .f1 {
+                    @include drop2();
+                }
+                &:focus ~ .s1 {
+                    @include dropS2();
+                }
+            }
+
+            &.f1 {
+                height: 6.1vmin;
+                background-image: url("assets/f1.svg");
+
+                &:focus ~ .s1 {
+                    @include dropS2();
+                }
+            }
+
+            &.s1 {
+                height: 42.3vmin;
+                background-image: url("assets/s1.svg");
+                .flame {
+                    top: 100%;
+                    display: block;
+
+                    $centerFlame: $rocketWidth / 2 - $flameWidth / 2;
+                    $offsetFlame: 4vmin;
+
+                    &.flame1 {
+                        left: $centerFlame;
+                    }
+
+                    &.flame2 {
+                        left: $centerFlame - $offsetFlame;
+                    }
+
+                    &.flame3 {
+                        left: $centerFlame + $offsetFlame;
+                    }
+                }
+            }
         }
         
         .flame {
@@ -40,9 +144,11 @@ $rocketHeight: 110.6vmin;
             background-repeat: no-repeat;
             background-size: cover;
             background-image: url("assets/flame.svg");
-
+            
             opacity: 0;
             display: none;
+            animation: flame $dur infinite, fade 1s 2s 1 forwards;
+
             $fireDelay: .5s;
 
             &.flame1 {
@@ -54,42 +160,6 @@ $rocketHeight: 110.6vmin;
             &.flame3 {
                 animation-delay: $fireDelay - .12s;
             }
-        }
-
-        .s1 {
-            background-image: url("assets/s1.svg");
-        }
-        
-        .s2 {
-            background-image: url("assets/s2.svg");
-        }
-
-        .s3 {
-            background-image: url("assets/s3.svg");
-        }
-
-        .sm {
-            background-image: url("assets/sm.svg");
-        }
-
-        .lm {
-            background-image: url("assets/lm.svg");
-        }
-
-        .cm {
-            background-image: url("assets/cm.svg");
-        }
-        
-        .f1 {
-            background-image: url("assets/f1.svg");
-        }
-
-        .f2 {
-            background-image: url("assets/f2.svg");
-        }
-
-        .f3 {
-            background-image: url("assets/f3.svg");
         }
     }
 }
@@ -137,7 +207,29 @@ $rocketHeight: 110.6vmin;
 
 // #########################################################
 
+@mixin dropS2() {
+    @include drop1();
+
+    .flame {
+        display: none;
+    }
+}
+
+@mixin drop1() {
+    transform: translateY($planeHeight) rotate(15deg);
+}
+
+@mixin drop2() {
+    transform: translateY($planeHeight) rotate(-15deg);
+}
+
+// #########################################################
+
 @keyframes fade {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+
+@keyframes flame {
+    50% {transform: scale(1, 1 + $flameStretch) translateY($flameHeight * $flameStretch / 2)}
 }

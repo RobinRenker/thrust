@@ -1,6 +1,5 @@
 @import "core/font";
 @import "core/var";
-@import "core/button";
 @import "core/stator";
 @import "core/rocket";
 @import "core/massive";
@@ -79,7 +78,6 @@ html,body {
     }
 
     .massive {
-        @include earth();
-        @include moon();
+        @include massive();
     }
 }

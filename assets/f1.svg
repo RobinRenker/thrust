@@ -1,13 +1,5 @@
-<svg width="200" height="1106" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-
-    <defs>
-        <g id="f1">
-            <rect fill="#fff" x="49.5" width="101" height="59" stroke-width="2" stroke="#000"/>
-            <rect width="30" height="59" fill="#000" x="70"/>
-            <rect width="10" height="59" fill="#000" x="140"/>
-        </g>
-    </defs>
-
-    <use y="625" href="#f1"/>
-
+<svg width="200" height="61" xmlns="http://www.w3.org/2000/svg">
+    <rect y="1" fill="#fff" x="49.5" width="101" height="59" stroke-width="2" stroke="#000"/>
+    <rect width="30" height="60" fill="#000" x="70"/>
+    <rect width="10" height="60" fill="#000" x="140"/>
 </svg>

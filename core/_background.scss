@@ -1,80 +1,16 @@
 @import "var";
 
 @mixin background() {
-
-    .plane {
+    .space {
         width: 100%;
         height: 100%;
-        display: none;
+        display: block;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         position: absolute;
         top: 0;
         left: 0;
-
-        &.space {
-            background-image: url("assets/space.svg");
-        }
-
-        &.atmosphere {
-            background-image: url("assets/sphere.svg");
-        }
+        background-image: url("assets/space.svg");
     }
-
-    .cloud {
-        position: absolute;
-        top: 0;
-        right: $planeWidth;
-        width: 30vmin;
-        height: 30vmin;
-        display: block;
-
-        background-image: url("assets/cloud.svg");
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-
-        &.cloud1 {
-            top: 35vmin;
-        }
-
-        &.cloud2 {
-            top: 25vmin;
-        }
-    }
-}
-
-@mixin space() {
-    .space {
-        display: block;
-    }
-
-    .atmosphere {
-        display: block;
-        animation: dropAtmosphere 1s forwards
-    }
-}
-
-@mixin atmosphere() {
-    .space {
-        display: block;
-    }
-
-    .atmosphere {
-        display: block;
-    }
-
-    .cloud1 {
-        right: 15vw;
-    }
-
-    .cloud2 {
-        right: auto;
-        left: 15vw;
-    }
-}
-
-@keyframes dropAtmosphere {
-    to {top: $planeHeight}
 }
