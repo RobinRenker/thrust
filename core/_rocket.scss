@@ -13,7 +13,7 @@ $rocketHeight: 110.6vmin;
         top: calc(#{$planeHeight / 2} - #{$rocketHeight / 2});
         width: $rocketWidth;
         //height: $rocketHeight;
-        transform: rotate(-15deg);
+        transform: rotate(-15deg) scale(.5);
         transition: height 1s;
 
         z-index: $zIndexRocket;
@@ -21,7 +21,7 @@ $rocketHeight: 110.6vmin;
         .rocketPart {
             width: 100%;
             display: block;
-            transition: margin $dur, transform 2s;
+            transition: margin $dur, transform 2s, top 2s;
             border: none;
             position: relative;
 
@@ -53,39 +53,34 @@ $rocketHeight: 110.6vmin;
                 outline: none;
             }
 
-            $escapeHeight: 7.9vmin;
-            &.escape {
-                background-image: url("assets/escape.svg");
-                height: 7.9vmin;
+            $cmHeight: 3.3vmin;
+            $lmHeight: 7vmin;
+            $smHeight: 7.65vmin;
+            $smBoxedHeight: 4.7vmin;
+
+            &.lmShadow {
+                height: $lmHeight;
             }
 
-            $cmHeight: 3.3vmin;
+            &.lm {
+                position: absolute;
+                top: $cmHeight + $smHeight + $lmHeight;
+                left: 0;
+                height: $lmHeight;
+                background-image: url("assets/lm.svg");
+            }
+            
             &.cm {
                 height: $cmHeight;
                 background-image: url("assets/cm.svg");
             }
 
-            $lmHeight: 7vmin;
-            &.lm {
-                height: $lmHeight;
-                background-image: url("assets/lm.svg");
-            }
-
-            $smHeight: 7.65vmin;
-            $smBoxedHeight: 4.7vmin;
             &.sm {
                 height: $smBoxedHeight;
                 
                 .print {
                     height: $smHeight;
                     background-image: url("assets/sm.svg");
-                }
-
-                .lm {
-                    position: absolute;
-                    left: 0;
-                    height: 7vmin;
-                    background-image: url("assets/lm.svg");
                 }
 
                 .flame {
@@ -99,6 +94,11 @@ $rocketHeight: 110.6vmin;
                     .flame {
                         display: block;
                     }
+                }
+
+                &:focus ~ .lm {
+                    transform: rotate(180deg);
+                    top: 0;
                 }
 
                 @include drop6();
@@ -283,11 +283,11 @@ $rocketHeight: 110.6vmin;
 }
 
 @mixin dropLeft() {
-    transform: translateY($planeHeight) rotate(15deg);
+    transform: translateY($planeHeight * 1.5) rotate(15deg);
 }
 
 @mixin dropRight() {
-    transform: translateY($planeHeight) rotate(-15deg);
+    transform: translateY($planeHeight * 1.5) rotate(-15deg);
 }
 
 // #########################################################

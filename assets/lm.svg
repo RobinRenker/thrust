@@ -1,3 +1,9 @@
 <svg width="200" height="70" xmlns="http://www.w3.org/2000/svg">
-    <rect x="79" width="42" height="70" fill="#f0f"/>
+    <rect x="79" width="42" height="70" fill="none"/>
+    
+    <path d="M79,8 l7,-7 h28 l7,7 v14 l-7,7 h-28 l-7,-7 Z" fill="grey" stroke="#000" stroke-width="2"/>
+    <rect x="80" y="29" width="40" height="18" fill="gold" stroke="#000" stroke-width="2"/>
+    <path d="M119,30 l5,5 l-8,22 l3,3 l-1,1 l-6,-6 l1,-1 l2,2 l7,-20 l-3,-3" fill="gold" stroke="#000" stroke-width="1"/>
+    <path d="M81,30 l-5,5 l8,22 l-3,3 l1,1 l6,-6 l-1,-1 l-2,2 l-7,-20 l3,-3" fill="gold" stroke="#000" stroke-width="1"/>
+
 </svg>
