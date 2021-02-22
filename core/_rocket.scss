@@ -53,25 +53,62 @@ $rocketHeight: 110.6vmin;
                 outline: none;
             }
 
+            $escapeHeight: 7.9vmin;
             &.escape {
                 background-image: url("assets/escape.svg");
                 height: 7.9vmin;
             }
 
+            $cmHeight: 3.3vmin;
             &.cm {
-                height: 3.1vmin;
+                height: $cmHeight;
                 background-image: url("assets/cm.svg");
             }
 
+            $lmHeight: 7vmin;
             &.lm {
-                height: 7vmin;
+                height: $lmHeight;
                 background-image: url("assets/lm.svg");
             }
 
+            $smHeight: 7.65vmin;
+            $smBoxedHeight: 4.7vmin;
             &.sm {
-                height: 4.7vmin;
-                background-image: url("assets/sm.svg");
-              
+                height: $smBoxedHeight;
+                
+                .print {
+                    height: $smHeight;
+                    background-image: url("assets/sm.svg");
+                }
+
+                .lm {
+                    position: absolute;
+                    left: 0;
+                    height: 7vmin;
+                    background-image: url("assets/lm.svg");
+                }
+
+                .flame {
+                    $centerFlame: $rocketWidth / 2 - $flameWidth / 2;
+
+                    top: $smHeight;
+                    left: $centerFlame;
+                }
+                
+                &:focus {
+                    .flame {
+                        display: block;
+                    }
+                }
+
+                @include drop6();
+            }
+
+            &.f3 {
+                height: 9.6vmin;
+                background-image: url("assets/f3.svg");
+
+                @include drop5();
             }
 
             &.s3 {
@@ -200,6 +237,20 @@ $rocketHeight: 110.6vmin;
 }
 
 // #########################################################
+
+@mixin drop6() {
+    @include drop5();
+    &:focus ~ .f3 {
+        @include dropRight();
+    }
+}
+
+@mixin drop5() {
+    @include drop4();
+    &:focus ~ .s3 {
+        @include dropLeft();
+    }
+}
 
 @mixin drop4() {
     @include drop3();
