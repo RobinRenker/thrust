@@ -1,28 +1,29 @@
 @import "var";
-@import url('https://fonts.googleapis.com/css?family=Lobster+Two|Poppins');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
-button {
-  font-family: 'Lobster Two', cursive;
+tr {
+  font-family: 'Lobster Two', sans-serif;
+  font-family: 'Poppins';
   font-size: 2*$base;
 }
 
 @media (min-width: $break-s){
-    button{
+    tr{
         font-size: 2*$base;
     }
 }
 @media (min-width: $break-m){
-    button{
+    tr{
         font-size: 3*$base;
     }
 }
 @media (min-width: $break-l){
-    button{
+    tr{
         font-size: 3*$base;
     }
 }
 @media (min-width: $break-xl){
-    button{
+    tr{
         font-size: 4*$base;
     }
 }

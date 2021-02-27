@@ -1,0 +1,74 @@
+@import "var"; 
+
+@mixin setProperty($class, $value) {
+    #{"." + $class} {
+        td {
+            &:nth-child(2) {
+                &::after {
+                    content: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin show() {
+    table {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+@mixin s1Stats() {
+    @include show();
+    @include setProperty("burn", "168 s");
+    @include setProperty("thrust", "35'100 kN");
+    @include setProperty("oxidizer", "1'305'000 L");
+    @include setProperty("fuel", "770'000 L");
+}
+
+@mixin s2Stats() {
+    @include show();
+    @include setProperty("burn", "360 s");
+    @include setProperty("thrust", "5'141 kN");
+    @include setProperty("oxidizer", "314'190 L");
+    @include setProperty("fuel", "984'200 L");
+}
+
+@mixin s3Stats() {
+    @include show();
+    @include setProperty("burn", "165s + 335 s");
+    @include setProperty("thrust", "1'033 kN");
+    @include setProperty("oxidizer", "73'280 L");
+    @include setProperty("fuel", "252'750 L");
+}
+
+@mixin stats() {
+    table {
+        color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: $rocketWidth;
+        padding: $spacing;
+        display: block;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity $dur;
+    
+        tr {
+            td {
+                white-space: nowrap;
+                &:nth-child(1) {
+                    text-align: left;
+                    padding-right: $spacing * 2;
+                }
+                &:nth-child(2) {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+

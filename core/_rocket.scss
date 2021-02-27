@@ -1,7 +1,8 @@
+@import "var";
+
 $flameHeight: 25.5vmin;
 $flameWidth: 10vmin;
 $flameStretch: 0.05;
-$rocketWidth: 20vmin;
 $rocketHeight: 110.6vmin;
 
 @mixin rocket() {
@@ -52,6 +53,8 @@ $rocketHeight: 110.6vmin;
             &:focus {
                 outline: none;
             }
+
+            @include stats();
 
             $cmHeight: 3.3vmin;
             $lmHeight: 7vmin;
@@ -127,6 +130,9 @@ $rocketHeight: 110.6vmin;
                 }
                 
                 &:focus {
+
+                    @include s3Stats();
+
                     .flame {
                         display: block;
                     }
@@ -143,6 +149,8 @@ $rocketHeight: 110.6vmin;
 
             &.s2 {
                 height: 18.9vmin;
+
+                
                 
                 .print {
                     height: 24.6vmin;
@@ -171,6 +179,9 @@ $rocketHeight: 110.6vmin;
                 @include drop2();
                 
                 &:focus {
+
+                    @include s2Stats();
+
                     .flame {
                         display: block;
                     }
@@ -186,6 +197,11 @@ $rocketHeight: 110.6vmin;
             &.s1 {
                 height: 42.3vmin;
                 background-image: url("assets/s1.svg");
+
+                &:focus {
+                    @include s1Stats();
+                }
+
                 .flame {
                     top: 100%;
                     display: block;

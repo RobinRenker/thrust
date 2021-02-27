@@ -3,6 +3,7 @@
 @import "core/rocket";
 @import "core/massive";
 @import "core/background";
+@import "core/stats";
 
 @mixin offset($r, $c, $m) {
     top: $step * ($r * $m - 2);
