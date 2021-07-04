@@ -1,0 +1,16 @@
+[
+  {
+    "firstname": "Jerry",
+    "lastname": "Smith",
+    "birthday": "2011-04-11T13:00:00.000Z",
+    "height": 177,
+    "heightUnit": "cm"
+  },
+  {
+    "firstname": "Morty",
+    "lastname": "Smith",
+    "birthday": "2031-04-11T13:00:00.000Z",
+    "height": 167,
+    "heightUnit": "cm"
+  }
+]
